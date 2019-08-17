@@ -1,0 +1,16 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+import "data.proto";
+import "testing_data.proto";
+import "optimization_report.proto";
+
+service MetaTrader4Servicer{
+    rpc GetTestingData(google.protobuf.Empty) returns (TestingData){}
+    rpc SetTestingData(TestingData) returns (google.protobuf.Empty){}
+    rpc ExecuteTest(TestingData) returns (OptimizationReport){}
+    rpc GetResult(google.protobuf.Empty) returns (OptimizationReport){}
+    rpc GetData(Data) returns (google.protobuf.Empty){}
+    rpc SetData(google.protobuf.Empty) returns (Data){}
+}
+
+

@@ -1,0 +1,14 @@
+syntax = "proto3";
+import "symbol.proto";
+import "period.proto";
+import "spread.proto";
+import "time_period.proto";
+import "algorithm.proto";
+
+message TestingData{
+    Symbol symbol = 1;
+    Period period = 2;
+    Spread spread = 3;
+    TimePeriod TimePeriod = 4;
+    Algorithm Algoritm = 5;
+}
