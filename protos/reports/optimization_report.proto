@@ -58,7 +58,7 @@ message OptimizationReport{
     MaxConsecutiveLossCount max_consecutive_loss_count = 20;
     MaxConclusiveLoss max_consecutive_loss = 21;
     MaxConclusiveWinsCount max_consecutive_wins_count = 22;
-    MaxConclusiveWins max_consecutive_wins_profit = 23;
+    MaxConclusiveWinsProfit max_consecutive_wins_profit = 23;
     MaxConsecutiveLossesCount max_consecutive_losses_count = 24;
     MaxConsecutiveLossesLoss max_consecutive_losses_loss = 25;
     ProfitTrades profit_trades = 26;
