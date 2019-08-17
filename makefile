@@ -4,14 +4,14 @@ PATH_META_CLIENT_PROTOS = meta_client/messages
 PATH_USER_CLIENT_PROTOS = user_client/messages
 PATH_PROTOS = protos
 
-all: python csharp
+all: clean python csharp
 
 .PHONY: all
 
 clean:
-	rm $(PATH_SERVER_PROTOS)/*
-	rm $(PATH_USER_CLIENT_PROTOS)/*
-	rm $(PATH_META_CLIENT_PROTOS)/*
+	rm $(PATH_SERVER_PROTOS)/*.py
+	rm $(PATH_USER_CLIENT_PROTOS)/*.cs
+	rm $(PATH_META_CLIENT_PROTOS)/*.py
 
 python:
 	protoc -I=/usr/local/include --proto_path=$(PATH_PROTOS) --python_out=$(PATH_SERVER_PROTOS) $(PROTOS)
