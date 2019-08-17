@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ExtectedPayoff{
+    float value = 1;
+}

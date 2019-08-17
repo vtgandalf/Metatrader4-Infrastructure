@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "macd_sample.proto";
+import "moving_average.proto";
+
+message Algorithm{
+    oneof algorithm{
+        MovingAverage moving_average = 1;
+        MACDSample macd_sample = 2;
+    }
+}

@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message DecreaseFactor{
+    float value = 1;
+}

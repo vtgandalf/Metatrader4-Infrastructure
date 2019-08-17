@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message GrossProfit{
+    float value = 1;
+}

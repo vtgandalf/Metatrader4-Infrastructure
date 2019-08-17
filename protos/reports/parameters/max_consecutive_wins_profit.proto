@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message MaxConsecutiveWinsProfit{
+    float value = 1;
+}

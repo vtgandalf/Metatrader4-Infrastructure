@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message LongPositions{
+    float value = 1;
+}

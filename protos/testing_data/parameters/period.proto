@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message Period{
+    string value = 1;
+}

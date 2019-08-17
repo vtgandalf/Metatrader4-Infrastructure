@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message ShortPositions{
+    float value = 1;
+}

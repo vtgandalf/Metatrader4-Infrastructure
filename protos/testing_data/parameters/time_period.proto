@@ -1,0 +1,7 @@
+syntax = "proto3";
+import "date.proto";
+
+message TimePeriod{
+    Date initial_date = 1;
+    Date final_date = 2;
+}

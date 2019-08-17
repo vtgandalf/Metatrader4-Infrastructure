@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message MaxConsecutiveProfitCount{
+    int32 value = 1;
+}

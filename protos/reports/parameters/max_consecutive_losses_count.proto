@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+message MaxConsecutiveLossesCount{
+    int32 value = 1;
+}
