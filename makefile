@@ -18,7 +18,7 @@ clean:
 python:
 	python -m grpc_tools.protoc -I=/usr/local/include --proto_path=$(PATH_PROTOS) --python_out=$(PATH_SERVER_PROTOS) --grpc_python_out=$(PATH_SERVER_PROTOS) $(PROTOS) 
 	python -m grpc_tools.protoc -I=/usr/local/include --proto_path=$(PATH_PROTOS) --python_out=$(PATH_META_CLIENT_PROTOS) --grpc_python_out=$(PATH_META_CLIENT_PROTOS) $(PROTOS)
-	python -m grpc_tools.protoc -I=/usr/local/include --proto_path=$(PATH_PROTOS) --python_out=$(PATH_TESTING_PROTOS) --grpc_python_out=$(PATH_META_CLIENT_PROTOS) $(PROTOS)
+	python -m grpc_tools.protoc -I=/usr/local/include --proto_path=$(PATH_PROTOS) --python_out=$(PATH_TESTING_PROTOS) --grpc_python_out=$(PATH_TESTING_PROTOS) $(PROTOS)
 
 csharp:
 	protoc -I=/usr/local/include --proto_path=$(PATH_PROTOS) --csharp_out=$(PATH_USER_CLIENT_PROTOS) $(PROTOS)
