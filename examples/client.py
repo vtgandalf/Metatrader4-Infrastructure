@@ -1,5 +1,6 @@
+import os
 import sys
-sys.path.append("./messages")
+sys.path.append(os.path.abspath('messages'))
 
 import os
 import grpc
@@ -7,10 +8,10 @@ import time
 import threading
 from concurrent import futures
 
-import messages.service_pb2 as service
-import messages.service_pb2_grpc as service_grpc
+import service_pb2 as service
+import service_pb2_grpc as service_grpc
 
-from messages.testing_data_pb2 import TestingData
+from testing_data_pb2 import TestingData
 from google.protobuf.empty_pb2 import Empty
 
 def run():
