@@ -2,7 +2,6 @@ import os
 import sys
 sys.path.append(os.path.abspath('messages'))
 
-import os
 import grpc
 import time
 import threading
@@ -16,7 +15,6 @@ from google.protobuf.empty_pb2 import Empty
 
 def run():
     counter = 0
-    pid = os.getppid()
     with grpc.insecure_channel("localhost:9999") as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.get_testing_data(Empty())
