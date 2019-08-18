@@ -1,0 +1,19 @@
+{
+    "server":{
+        "address": "server.address"
+    },
+    "clients":[
+        {
+            "address": "client.address"
+        },
+        {
+            "address": "client.address"
+        },
+        {
+            "address": "client.address"
+        },
+        {
+            "address": "client.address"
+        }
+    ]
+}
