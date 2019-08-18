@@ -6,8 +6,8 @@ from metatrader.backtest import BackTest
 initizalize('C:\\Program Files (x86)\\MetaTrader 4 IC Markets')
 
 # specify backtest period by datetime format
-from_date = datetime.datetime(2019, 8, 1)
-to_date = datetime.datetime(2019, 8, 2)
+from_date = datetime.datetime(2019, 8, 16)
+to_date = datetime.datetime(2019, 8, 17)
 
 ea_name = 'Moving Average'
 

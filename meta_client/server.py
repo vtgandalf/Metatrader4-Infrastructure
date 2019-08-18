@@ -12,30 +12,36 @@ import service_pb2_grpc as service_grpc
 
 from testing_data_pb2 import TestingData
 
-class Listener(service_grpc.MetaTrader4ServiceServicer):
-    # adding testing object with some data
-    data = TestingData()
-    data.symbol.value = 'test_symbol'
-    data.period.value = 'test_period'
-    data.spread.value = 'test_spread'
+import base as base
 
-    lastPrintTime = 0
+class Listener(service_grpc.MetaTrader4ServiceServicer):
+    running = False
 
     def __inti__(self, *args, **kwargs):
-        self.counter = 0
         self.lastPrintTime = time.time()
 
     def get_testing_data(self, request, context):
         return self.data
+
+    def execute_test(self, testing_data, context):
+        self.running = True
+        report = base.run_test(testing_data)
+        self.running = False
+        return report
+
     
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
-    service_grpc.add_MetaTrader4ServiceServicer_to_server(Listener(), server)
-    server.add_insecure_port("[::]:9998")
+    listener = Listener()
+    service_grpc.add_MetaTrader4ServiceServicer_to_server(listener, server)
+    server.add_insecure_port("[::]:9999")
     server.start()
+    running_status = listener.running
     try:
         while True:
-            print("server on: threads %i" % (threading.active_count()))
+            if not listener.running == running_status:
+                print("MT4 status changed from " + str(running_status) + " to " + str(listener.running))
+                running_status = listener.running
             time.sleep(10)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")

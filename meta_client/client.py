@@ -17,7 +17,7 @@ def run():
     counter = 0
     with grpc.insecure_channel("localhost:9999") as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        response = stub.execute_test(Empty())
+        response = stub.get_testing_data(Empty())
         print(response)
         channel.unsubscribe(close)
         exit()
