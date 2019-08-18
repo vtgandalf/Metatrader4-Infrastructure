@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x12moving_shift.proto\"\x1c\n\x0bMovingShift\x12\r\n\x05value\x18\x01 \x01(\x02\x62\x06proto3')
+  serialized_pb=_b('\n\x12moving_shift.proto\"\x1c\n\x0bMovingShift\x12\r\n\x05value\x18\x01 \x01(\x05\x62\x06proto3')
 )
 
 
@@ -35,8 +35,8 @@ _MOVINGSHIFT = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='value', full_name='MovingShift.value', index=0,
-      number=1, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),

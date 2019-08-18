@@ -23,7 +23,7 @@ public static partial class MovingPeriodReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "ChNtb3ZpbmdfcGVyaW9kLnByb3RvIh0KDE1vdmluZ1BlcmlvZBINCgV2YWx1",
-          "ZRgBIAEoAmIGcHJvdG8z"));
+          "ZRgBIAEoBWIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -70,9 +70,9 @@ public sealed partial class MovingPeriod : pb::IMessage<MovingPeriod> {
 
   /// <summary>Field number for the "value" field.</summary>
   public const int ValueFieldNumber = 1;
-  private float value_;
+  private int value_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public float Value {
+  public int Value {
     get { return value_; }
     set {
       value_ = value;
@@ -92,14 +92,14 @@ public sealed partial class MovingPeriod : pb::IMessage<MovingPeriod> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Value, other.Value)) return false;
+    if (Value != other.Value) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (Value != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Value);
+    if (Value != 0) hash ^= Value.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -113,9 +113,9 @@ public sealed partial class MovingPeriod : pb::IMessage<MovingPeriod> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (Value != 0F) {
-      output.WriteRawTag(13);
-      output.WriteFloat(Value);
+    if (Value != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(Value);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -125,8 +125,8 @@ public sealed partial class MovingPeriod : pb::IMessage<MovingPeriod> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (Value != 0F) {
-      size += 1 + 4;
+    if (Value != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Value);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -139,7 +139,7 @@ public sealed partial class MovingPeriod : pb::IMessage<MovingPeriod> {
     if (other == null) {
       return;
     }
-    if (other.Value != 0F) {
+    if (other.Value != 0) {
       Value = other.Value;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -153,8 +153,8 @@ public sealed partial class MovingPeriod : pb::IMessage<MovingPeriod> {
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
-        case 13: {
-          Value = input.ReadFloat();
+        case 8: {
+          Value = input.ReadInt32();
           break;
         }
       }
