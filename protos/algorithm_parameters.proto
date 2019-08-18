@@ -15,14 +15,14 @@ message AlgorithmParameters{
     Lots lots = 1;
     // macd_sample
     // + lots
-    TakeProfit take_profit = 3;
-    TrailingStop trailing_stop = 4;
-    MACDOpenLevel macd_open_level = 5;
-    MATrendPeriod mat_trand_period = 6;
+    TakeProfit take_profit = 2;
+    TrailingStop trailing_stop = 3;
+    MACDOpenLevel macd_open_level = 4;
+    MATrendPeriod mat_trand_period = 5;
     // moving_average
     // + lots
-    MaximumRisk maximum_risk = 3;
-    DecreaseFactor decrease_factor = 4;
-    MovingPeriod moving_period = 5;
-    MovingShift moving_shift = 6;
+    MaximumRisk maximum_risk = 6;
+    DecreaseFactor decrease_factor = 7;
+    MovingPeriod moving_period = 8;
+    MovingShift moving_shift = 9;
 }

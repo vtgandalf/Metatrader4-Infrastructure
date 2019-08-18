@@ -13,7 +13,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,11 +20,103 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\ndate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"1\n\x04\x44\x61te\x12)\n\x05value\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestampb\x06proto3')
-  ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\ndate.proto\"\x15\n\x04Year\x12\r\n\x05value\x18\x01 \x01(\x05\"\x16\n\x05Month\x12\r\n\x05value\x18\x01 \x01(\x05\"\x14\n\x03\x44\x61y\x12\r\n\x05value\x18\x01 \x01(\x05\"E\n\x04\x44\x61te\x12\x13\n\x04year\x18\x01 \x01(\x0b\x32\x05.Year\x12\x15\n\x05month\x18\x02 \x01(\x0b\x32\x06.Month\x12\x11\n\x03\x64\x61y\x18\x03 \x01(\x0b\x32\x04.Dayb\x06proto3')
+)
 
 
+
+
+_YEAR = _descriptor.Descriptor(
+  name='Year',
+  full_name='Year',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Year.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=14,
+  serialized_end=35,
+)
+
+
+_MONTH = _descriptor.Descriptor(
+  name='Month',
+  full_name='Month',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Month.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=37,
+  serialized_end=59,
+)
+
+
+_DAY = _descriptor.Descriptor(
+  name='Day',
+  full_name='Day',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='Day.value', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=61,
+  serialized_end=81,
+)
 
 
 _DATE = _descriptor.Descriptor(
@@ -36,8 +127,22 @@ _DATE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Date.value', index=0,
+      name='year', full_name='Date.year', index=0,
       number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='month', full_name='Date.month', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='day', full_name='Date.day', index=2,
+      number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -54,13 +159,39 @@ _DATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=47,
-  serialized_end=96,
+  serialized_start=83,
+  serialized_end=152,
 )
 
-_DATE.fields_by_name['value'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_DATE.fields_by_name['year'].message_type = _YEAR
+_DATE.fields_by_name['month'].message_type = _MONTH
+_DATE.fields_by_name['day'].message_type = _DAY
+DESCRIPTOR.message_types_by_name['Year'] = _YEAR
+DESCRIPTOR.message_types_by_name['Month'] = _MONTH
+DESCRIPTOR.message_types_by_name['Day'] = _DAY
 DESCRIPTOR.message_types_by_name['Date'] = _DATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+Year = _reflection.GeneratedProtocolMessageType('Year', (_message.Message,), {
+  'DESCRIPTOR' : _YEAR,
+  '__module__' : 'date_pb2'
+  # @@protoc_insertion_point(class_scope:Year)
+  })
+_sym_db.RegisterMessage(Year)
+
+Month = _reflection.GeneratedProtocolMessageType('Month', (_message.Message,), {
+  'DESCRIPTOR' : _MONTH,
+  '__module__' : 'date_pb2'
+  # @@protoc_insertion_point(class_scope:Month)
+  })
+_sym_db.RegisterMessage(Month)
+
+Day = _reflection.GeneratedProtocolMessageType('Day', (_message.Message,), {
+  'DESCRIPTOR' : _DAY,
+  '__module__' : 'date_pb2'
+  # @@protoc_insertion_point(class_scope:Day)
+  })
+_sym_db.RegisterMessage(Day)
 
 Date = _reflection.GeneratedProtocolMessageType('Date', (_message.Message,), {
   'DESCRIPTOR' : _DATE,

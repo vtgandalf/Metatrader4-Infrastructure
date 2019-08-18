@@ -24,14 +24,14 @@ public static partial class TestingDataReflection {
         string.Concat(
           "ChJ0ZXN0aW5nX2RhdGEucHJvdG8aDHN5bWJvbC5wcm90bxoMcGVyaW9kLnBy",
           "b3RvGgxzcHJlYWQucHJvdG8aEXRpbWVfcGVyaW9kLnByb3RvGg9hbGdvcml0",
-          "aG0ucHJvdG8ilwEKC1Rlc3RpbmdEYXRhEhcKBnN5bWJvbBgBIAEoCzIHLlN5",
+          "aG0ucHJvdG8imQEKC1Rlc3RpbmdEYXRhEhcKBnN5bWJvbBgBIAEoCzIHLlN5",
           "bWJvbBIXCgZwZXJpb2QYAiABKAsyBy5QZXJpb2QSFwoGc3ByZWFkGAMgASgL",
-          "MgcuU3ByZWFkEh8KClRpbWVQZXJpb2QYBCABKAsyCy5UaW1lUGVyaW9kEhwK",
-          "CEFsZ29yaXRtGAUgASgLMgouQWxnb3JpdGhtYgZwcm90bzM="));
+          "MgcuU3ByZWFkEiAKC3RpbWVfcGVyaW9kGAQgASgLMgsuVGltZVBlcmlvZBId",
+          "CglhbGdvcml0aG0YBSABKAsyCi5BbGdvcml0aG1iBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::SymbolReflection.Descriptor, global::PeriodReflection.Descriptor, global::SpreadReflection.Descriptor, global::TimePeriodReflection.Descriptor, global::AlgorithmReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TestingData), global::TestingData.Parser, new[]{ "Symbol", "Period", "Spread", "TimePeriod", "Algoritm" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::TestingData), global::TestingData.Parser, new[]{ "Symbol", "Period", "Spread", "TimePeriod", "Algorithm" }, null, null, null, null)
         }));
   }
   #endregion
@@ -67,7 +67,7 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     period_ = other.period_ != null ? other.period_.Clone() : null;
     spread_ = other.spread_ != null ? other.spread_.Clone() : null;
     timePeriod_ = other.timePeriod_ != null ? other.timePeriod_.Clone() : null;
-    algoritm_ = other.algoritm_ != null ? other.algoritm_.Clone() : null;
+    algorithm_ = other.algorithm_ != null ? other.algorithm_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -109,7 +109,7 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     }
   }
 
-  /// <summary>Field number for the "TimePeriod" field.</summary>
+  /// <summary>Field number for the "time_period" field.</summary>
   public const int TimePeriodFieldNumber = 4;
   private global::TimePeriod timePeriod_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -120,14 +120,14 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     }
   }
 
-  /// <summary>Field number for the "Algoritm" field.</summary>
-  public const int AlgoritmFieldNumber = 5;
-  private global::Algorithm algoritm_;
+  /// <summary>Field number for the "algorithm" field.</summary>
+  public const int AlgorithmFieldNumber = 5;
+  private global::Algorithm algorithm_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::Algorithm Algoritm {
-    get { return algoritm_; }
+  public global::Algorithm Algorithm {
+    get { return algorithm_; }
     set {
-      algoritm_ = value;
+      algorithm_ = value;
     }
   }
 
@@ -148,7 +148,7 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     if (!object.Equals(Period, other.Period)) return false;
     if (!object.Equals(Spread, other.Spread)) return false;
     if (!object.Equals(TimePeriod, other.TimePeriod)) return false;
-    if (!object.Equals(Algoritm, other.Algoritm)) return false;
+    if (!object.Equals(Algorithm, other.Algorithm)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -159,7 +159,7 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     if (period_ != null) hash ^= Period.GetHashCode();
     if (spread_ != null) hash ^= Spread.GetHashCode();
     if (timePeriod_ != null) hash ^= TimePeriod.GetHashCode();
-    if (algoritm_ != null) hash ^= Algoritm.GetHashCode();
+    if (algorithm_ != null) hash ^= Algorithm.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -189,9 +189,9 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
       output.WriteRawTag(34);
       output.WriteMessage(TimePeriod);
     }
-    if (algoritm_ != null) {
+    if (algorithm_ != null) {
       output.WriteRawTag(42);
-      output.WriteMessage(Algoritm);
+      output.WriteMessage(Algorithm);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -213,8 +213,8 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     if (timePeriod_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(TimePeriod);
     }
-    if (algoritm_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Algoritm);
+    if (algorithm_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Algorithm);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -251,11 +251,11 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
       }
       TimePeriod.MergeFrom(other.TimePeriod);
     }
-    if (other.algoritm_ != null) {
-      if (algoritm_ == null) {
-        Algoritm = new global::Algorithm();
+    if (other.algorithm_ != null) {
+      if (algorithm_ == null) {
+        Algorithm = new global::Algorithm();
       }
-      Algoritm.MergeFrom(other.Algoritm);
+      Algorithm.MergeFrom(other.Algorithm);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -297,10 +297,10 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
           break;
         }
         case 42: {
-          if (algoritm_ == null) {
-            Algoritm = new global::Algorithm();
+          if (algorithm_ == null) {
+            Algorithm = new global::Algorithm();
           }
-          input.ReadMessage(Algoritm);
+          input.ReadMessage(Algorithm);
           break;
         }
       }

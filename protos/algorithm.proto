@@ -1,6 +1,6 @@
 syntax = "proto3";
 import "name.proto";
-import "algotithm_parameters";
+import "algorithm_parameters.proto";
 
 message Algorithm{
     Name name = 1;

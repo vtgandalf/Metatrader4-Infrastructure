@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x12testing_data.proto\x1a\x0csymbol.proto\x1a\x0cperiod.proto\x1a\x0cspread.proto\x1a\x11time_period.proto\x1a\x0f\x61lgorithm.proto\"\x97\x01\n\x0bTestingData\x12\x17\n\x06symbol\x18\x01 \x01(\x0b\x32\x07.Symbol\x12\x17\n\x06period\x18\x02 \x01(\x0b\x32\x07.Period\x12\x17\n\x06spread\x18\x03 \x01(\x0b\x32\x07.Spread\x12\x1f\n\nTimePeriod\x18\x04 \x01(\x0b\x32\x0b.TimePeriod\x12\x1c\n\x08\x41lgoritm\x18\x05 \x01(\x0b\x32\n.Algorithmb\x06proto3')
+  serialized_pb=_b('\n\x12testing_data.proto\x1a\x0csymbol.proto\x1a\x0cperiod.proto\x1a\x0cspread.proto\x1a\x11time_period.proto\x1a\x0f\x61lgorithm.proto\"\x99\x01\n\x0bTestingData\x12\x17\n\x06symbol\x18\x01 \x01(\x0b\x32\x07.Symbol\x12\x17\n\x06period\x18\x02 \x01(\x0b\x32\x07.Period\x12\x17\n\x06spread\x18\x03 \x01(\x0b\x32\x07.Spread\x12 \n\x0btime_period\x18\x04 \x01(\x0b\x32\x0b.TimePeriod\x12\x1d\n\talgorithm\x18\x05 \x01(\x0b\x32\n.Algorithmb\x06proto3')
   ,
   dependencies=[symbol__pb2.DESCRIPTOR,period__pb2.DESCRIPTOR,spread__pb2.DESCRIPTOR,time__period__pb2.DESCRIPTOR,algorithm__pb2.DESCRIPTOR,])
 
@@ -61,14 +61,14 @@ _TESTINGDATA = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='TimePeriod', full_name='TestingData.TimePeriod', index=3,
+      name='time_period', full_name='TestingData.time_period', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='Algoritm', full_name='TestingData.Algoritm', index=4,
+      name='algorithm', full_name='TestingData.algorithm', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -87,14 +87,14 @@ _TESTINGDATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=101,
-  serialized_end=252,
+  serialized_end=254,
 )
 
 _TESTINGDATA.fields_by_name['symbol'].message_type = symbol__pb2._SYMBOL
 _TESTINGDATA.fields_by_name['period'].message_type = period__pb2._PERIOD
 _TESTINGDATA.fields_by_name['spread'].message_type = spread__pb2._SPREAD
-_TESTINGDATA.fields_by_name['TimePeriod'].message_type = time__period__pb2._TIMEPERIOD
-_TESTINGDATA.fields_by_name['Algoritm'].message_type = algorithm__pb2._ALGORITHM
+_TESTINGDATA.fields_by_name['time_period'].message_type = time__period__pb2._TIMEPERIOD
+_TESTINGDATA.fields_by_name['algorithm'].message_type = algorithm__pb2._ALGORITHM
 DESCRIPTOR.message_types_by_name['TestingData'] = _TESTINGDATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

@@ -13,8 +13,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-import macd_sample_pb2 as macd__sample__pb2
-import moving_average_pb2 as moving__average__pb2
+import name_pb2 as name__pb2
+import algorithm_parameters_pb2 as algorithm__parameters__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0f\x61lgorithm.proto\x1a\x11macd_sample.proto\x1a\x14moving_average.proto\"f\n\tAlgorithm\x12(\n\x0emoving_average\x18\x01 \x01(\x0b\x32\x0e.MovingAverageH\x00\x12\"\n\x0bmacd_sample\x18\x02 \x01(\x0b\x32\x0b.MACDSampleH\x00\x42\x0b\n\talgorithmb\x06proto3')
+  serialized_pb=_b('\n\x0f\x61lgorithm.proto\x1a\nname.proto\x1a\x1a\x61lgorithm_parameters.proto\"J\n\tAlgorithm\x12\x13\n\x04name\x18\x01 \x01(\x0b\x32\x05.Name\x12(\n\nparameters\x18\x02 \x01(\x0b\x32\x14.AlgorithmParametersb\x06proto3')
   ,
-  dependencies=[macd__sample__pb2.DESCRIPTOR,moving__average__pb2.DESCRIPTOR,])
+  dependencies=[name__pb2.DESCRIPTOR,algorithm__parameters__pb2.DESCRIPTOR,])
 
 
 
@@ -37,14 +37,14 @@ _ALGORITHM = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='moving_average', full_name='Algorithm.moving_average', index=0,
+      name='name', full_name='Algorithm.name', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='macd_sample', full_name='Algorithm.macd_sample', index=1,
+      name='parameters', full_name='Algorithm.parameters', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -61,22 +61,13 @@ _ALGORITHM = _descriptor.Descriptor(
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
-    _descriptor.OneofDescriptor(
-      name='algorithm', full_name='Algorithm.algorithm',
-      index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=60,
-  serialized_end=162,
+  serialized_start=59,
+  serialized_end=133,
 )
 
-_ALGORITHM.fields_by_name['moving_average'].message_type = moving__average__pb2._MOVINGAVERAGE
-_ALGORITHM.fields_by_name['macd_sample'].message_type = macd__sample__pb2._MACDSAMPLE
-_ALGORITHM.oneofs_by_name['algorithm'].fields.append(
-  _ALGORITHM.fields_by_name['moving_average'])
-_ALGORITHM.fields_by_name['moving_average'].containing_oneof = _ALGORITHM.oneofs_by_name['algorithm']
-_ALGORITHM.oneofs_by_name['algorithm'].fields.append(
-  _ALGORITHM.fields_by_name['macd_sample'])
-_ALGORITHM.fields_by_name['macd_sample'].containing_oneof = _ALGORITHM.oneofs_by_name['algorithm']
+_ALGORITHM.fields_by_name['name'].message_type = name__pb2._NAME
+_ALGORITHM.fields_by_name['parameters'].message_type = algorithm__parameters__pb2._ALGORITHMPARAMETERS
 DESCRIPTOR.message_types_by_name['Algorithm'] = _ALGORITHM
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
