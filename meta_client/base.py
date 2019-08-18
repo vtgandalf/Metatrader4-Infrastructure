@@ -17,7 +17,7 @@ from metatrader.report import BacktestReport
 from testing_data_pb2 import TestingData
 from optimization_report_pb2 import OptimizationReport
 
-def convertsion_report_to_message(report: BacktestReport):
+def convertsion_report_to_message(report):
     report_message = OptimizationReport()
     # Assigning each value of the backtest report message
     # to its counterpart
@@ -60,7 +60,7 @@ def convertsion_report_to_message(report: BacktestReport):
     print(report_message)
     return report_message
 
-def convertsion_report_from_message(report_message: OptimizationReport):
+def convertsion_report_from_message(report_message):
     report = BacktestReport()
     # Assigning each value of the backtest report object
     # to its message counterpart
@@ -104,7 +104,7 @@ def convertsion_report_from_message(report_message: OptimizationReport):
     return report
 
 
-def run_test(testing_data_message: TestingData):
+def run_test(testing_data_message):
     # point mt4 install folder
     initizalize('C:\\Program Files (x86)\\MetaTrader 4 IC Markets')
 
@@ -130,16 +130,18 @@ def run_test(testing_data_message: TestingData):
     print(param)
 
     from_date = datetime.datetime(\
-        testing_data_message.time_period.initial_date.year.value,\
-        testing_data_message.time_period.initial_date.month.value,\
-        testing_data_message.time_period.initial_date.day.value)\
-    print("Starting Date: {}".format(str(from_date).strip()))
+        time_period.initial_date.year.value,\
+        time_period.initial_date.month.value,\
+        time_period.initial_date.day.value)\
+    # print("Starting Date:")
+    # print(from_date)
 
     to_date = datetime.datetime(\
-        testing_data_message.time_period.final_date.year.value,\
-        testing_data_message.time_period.final_date.month.value,\
-        testing_data_message.time_period.final_date.day.value)
-    print("Starting Date: {}".format(str(to_date).strip()))
+        time_period.final_date.year.value,\
+        time_period.final_date.month.value,\
+        time_period.final_date.day.value)
+    # print("Starting Date:")
+    # print(to_date)
 
 
     # create backtest object
@@ -153,4 +155,20 @@ def run_test(testing_data_message: TestingData):
     # print(ret.gross_profit)
     return
         
-
+x = TestingData()
+x.symbol.value = 'EURUSD'
+x.period.value = 'M5'
+x.spread.value = '5'
+x.time_period.initial_date.year.value = 2019
+x.time_period.initial_date.month.value = 8
+x.time_period.initial_date.day.value = 1
+x.time_period.final_date.year.value = 2019
+x.time_period.final_date.month.value = 8
+x.time_period.final_date.day.value = 2
+x.algorithm.name.value = 'Moving Average'
+x.algotithm.parameters.lots.value = float(0.1)
+x.algorithm.parameters.maximum_risk.value = float(0.02)
+x.algorithm.parameters.decrease_factor.value = float(3.0)
+x.algorithm.parameters.moving_period.value = float(12)
+x.algorithm.parameters.moving_shift.value = float(6)
+run_test(x)
