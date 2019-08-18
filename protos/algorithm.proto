@@ -1,10 +1,8 @@
 syntax = "proto3";
-import "macd_sample.proto";
-import "moving_average.proto";
+import "name.proto";
+import "algotithm_parameters";
 
 message Algorithm{
-    oneof algorithm{
-        MovingAverage moving_average = 1;
-        MACDSample macd_sample = 2;
-    }
+    Name name = 1;
+    AlgorithmParameters parameters = 2;
 }

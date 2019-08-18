@@ -9,6 +9,6 @@ message TestingData{
     Symbol symbol = 1;
     Period period = 2;
     Spread spread = 3;
-    TimePeriod TimePeriod = 4;
-    Algorithm Algoritm = 5;
+    TimePeriod time_period = 4;
+    Algorithm algorithm = 5;
 }

@@ -1,6 +1,19 @@
 syntax = "proto3";
-import "google/protobuf/timestamp.proto";
+
+message Year{
+    int32 value = 1;
+}
+
+message Month{
+    int32 value = 1;
+}
+
+message Day{
+    int32 value = 1;
+}
 
 message Date{
-    google.protobuf.Timestamp value = 1;
+    Year year = 1;
+    Month month = 2;
+    Day day = 3;
 }
