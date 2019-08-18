@@ -26,19 +26,19 @@ public static partial class AlgorithmParametersReflection {
           "ZV9wcm9maXQucHJvdG8aE3RyYWlsaW5nX3N0b3AucHJvdG8aFW1hY2Rfb3Bl",
           "bl9sZXZlbC5wcm90bxoWbWF0X3RyZW5kX3BlcmlvZC5wcm90bxoSbWF4aW11",
           "bV9yaXNrLnByb3RvGhVkZWNyZWFzZV9mYWN0b3IucHJvdG8aE21vdmluZ19w",
-          "ZXJpb2QucHJvdG8aEm1vdmluZ19zaGlmdC5wcm90byLdAgoTQWxnb3JpdGht",
-          "UGFyYW1ldGVycxITCgRsb3RzGAEgASgLMgUuTG90cxIgCgt0YWtlX3Byb2Zp",
-          "dBgCIAEoCzILLlRha2VQcm9maXQSJAoNdHJhaWxpbmdfc3RvcBgDIAEoCzIN",
-          "LlRyYWlsaW5nU3RvcBInCg9tYWNkX29wZW5fbGV2ZWwYBCABKAsyDi5NQUNE",
-          "T3BlbkxldmVsEigKEG1hdF90cmFuZF9wZXJpb2QYBSABKAsyDi5NQVRyZW5k",
-          "UGVyaW9kEiIKDG1heGltdW1fcmlzaxgGIAEoCzIMLk1heGltdW1SaXNrEigK",
-          "D2RlY3JlYXNlX2ZhY3RvchgHIAEoCzIPLkRlY3JlYXNlRmFjdG9yEiQKDW1v",
-          "dmluZ19wZXJpb2QYCCABKAsyDS5Nb3ZpbmdQZXJpb2QSIgoMbW92aW5nX3No",
-          "aWZ0GAkgASgLMgwuTW92aW5nU2hpZnRiBnByb3RvMw=="));
+          "ZXJpb2QucHJvdG8aEm1vdmluZ19zaGlmdC5wcm90byLTAgoTQWxnb3JpdGht",
+          "UGFyYW1ldGVycxITCgRMb3RzGAEgASgLMgUuTG90cxIfCgpUYWtlUHJvZml0",
+          "GAIgASgLMgsuVGFrZVByb2ZpdBIjCgxUcmFpbGluZ1N0b3AYAyABKAsyDS5U",
+          "cmFpbGluZ1N0b3ASJQoNTUFDRE9wZW5MZXZlbBgEIAEoCzIOLk1BQ0RPcGVu",
+          "TGV2ZWwSJgoOTUFUVHJlbmRQZXJpb2QYBSABKAsyDi5NQVRyZW5kUGVyaW9k",
+          "EiEKC01heGltdW1SaXNrGAYgASgLMgwuTWF4aW11bVJpc2sSJwoORGVjcmVh",
+          "c2VGYWN0b3IYByABKAsyDy5EZWNyZWFzZUZhY3RvchIjCgxNb3ZpbmdQZXJp",
+          "b2QYCCABKAsyDS5Nb3ZpbmdQZXJpb2QSIQoLTW92aW5nU2hpZnQYCSABKAsy",
+          "DC5Nb3ZpbmdTaGlmdGIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::LotsReflection.Descriptor, global::TakeProfitReflection.Descriptor, global::TrailingStopReflection.Descriptor, global::MacdOpenLevelReflection.Descriptor, global::MatTrendPeriodReflection.Descriptor, global::MaximumRiskReflection.Descriptor, global::DecreaseFactorReflection.Descriptor, global::MovingPeriodReflection.Descriptor, global::MovingShiftReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AlgorithmParameters), global::AlgorithmParameters.Parser, new[]{ "Lots", "TakeProfit", "TrailingStop", "MacdOpenLevel", "MatTrandPeriod", "MaximumRisk", "DecreaseFactor", "MovingPeriod", "MovingShift" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::AlgorithmParameters), global::AlgorithmParameters.Parser, new[]{ "Lots", "TakeProfit", "TrailingStop", "MACDOpenLevel", "MATTrendPeriod", "MaximumRisk", "DecreaseFactor", "MovingPeriod", "MovingShift" }, null, null, null, null)
         }));
   }
   #endregion
@@ -73,8 +73,8 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     lots_ = other.lots_ != null ? other.lots_.Clone() : null;
     takeProfit_ = other.takeProfit_ != null ? other.takeProfit_.Clone() : null;
     trailingStop_ = other.trailingStop_ != null ? other.trailingStop_.Clone() : null;
-    macdOpenLevel_ = other.macdOpenLevel_ != null ? other.macdOpenLevel_.Clone() : null;
-    matTrandPeriod_ = other.matTrandPeriod_ != null ? other.matTrandPeriod_.Clone() : null;
+    mACDOpenLevel_ = other.mACDOpenLevel_ != null ? other.mACDOpenLevel_.Clone() : null;
+    mATTrendPeriod_ = other.mATTrendPeriod_ != null ? other.mATTrendPeriod_.Clone() : null;
     maximumRisk_ = other.maximumRisk_ != null ? other.maximumRisk_.Clone() : null;
     decreaseFactor_ = other.decreaseFactor_ != null ? other.decreaseFactor_.Clone() : null;
     movingPeriod_ = other.movingPeriod_ != null ? other.movingPeriod_.Clone() : null;
@@ -87,7 +87,7 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     return new AlgorithmParameters(this);
   }
 
-  /// <summary>Field number for the "lots" field.</summary>
+  /// <summary>Field number for the "Lots" field.</summary>
   public const int LotsFieldNumber = 1;
   private global::Lots lots_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,7 +98,7 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     }
   }
 
-  /// <summary>Field number for the "take_profit" field.</summary>
+  /// <summary>Field number for the "TakeProfit" field.</summary>
   public const int TakeProfitFieldNumber = 2;
   private global::TakeProfit takeProfit_;
   /// <summary>
@@ -113,7 +113,7 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     }
   }
 
-  /// <summary>Field number for the "trailing_stop" field.</summary>
+  /// <summary>Field number for the "TrailingStop" field.</summary>
   public const int TrailingStopFieldNumber = 3;
   private global::TrailingStop trailingStop_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -124,29 +124,29 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     }
   }
 
-  /// <summary>Field number for the "macd_open_level" field.</summary>
-  public const int MacdOpenLevelFieldNumber = 4;
-  private global::MACDOpenLevel macdOpenLevel_;
+  /// <summary>Field number for the "MACDOpenLevel" field.</summary>
+  public const int MACDOpenLevelFieldNumber = 4;
+  private global::MACDOpenLevel mACDOpenLevel_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::MACDOpenLevel MacdOpenLevel {
-    get { return macdOpenLevel_; }
+  public global::MACDOpenLevel MACDOpenLevel {
+    get { return mACDOpenLevel_; }
     set {
-      macdOpenLevel_ = value;
+      mACDOpenLevel_ = value;
     }
   }
 
-  /// <summary>Field number for the "mat_trand_period" field.</summary>
-  public const int MatTrandPeriodFieldNumber = 5;
-  private global::MATrendPeriod matTrandPeriod_;
+  /// <summary>Field number for the "MATTrendPeriod" field.</summary>
+  public const int MATTrendPeriodFieldNumber = 5;
+  private global::MATrendPeriod mATTrendPeriod_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::MATrendPeriod MatTrandPeriod {
-    get { return matTrandPeriod_; }
+  public global::MATrendPeriod MATTrendPeriod {
+    get { return mATTrendPeriod_; }
     set {
-      matTrandPeriod_ = value;
+      mATTrendPeriod_ = value;
     }
   }
 
-  /// <summary>Field number for the "maximum_risk" field.</summary>
+  /// <summary>Field number for the "MaximumRisk" field.</summary>
   public const int MaximumRiskFieldNumber = 6;
   private global::MaximumRisk maximumRisk_;
   /// <summary>
@@ -161,7 +161,7 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     }
   }
 
-  /// <summary>Field number for the "decrease_factor" field.</summary>
+  /// <summary>Field number for the "DecreaseFactor" field.</summary>
   public const int DecreaseFactorFieldNumber = 7;
   private global::DecreaseFactor decreaseFactor_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -172,7 +172,7 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     }
   }
 
-  /// <summary>Field number for the "moving_period" field.</summary>
+  /// <summary>Field number for the "MovingPeriod" field.</summary>
   public const int MovingPeriodFieldNumber = 8;
   private global::MovingPeriod movingPeriod_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -183,7 +183,7 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     }
   }
 
-  /// <summary>Field number for the "moving_shift" field.</summary>
+  /// <summary>Field number for the "MovingShift" field.</summary>
   public const int MovingShiftFieldNumber = 9;
   private global::MovingShift movingShift_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -210,8 +210,8 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     if (!object.Equals(Lots, other.Lots)) return false;
     if (!object.Equals(TakeProfit, other.TakeProfit)) return false;
     if (!object.Equals(TrailingStop, other.TrailingStop)) return false;
-    if (!object.Equals(MacdOpenLevel, other.MacdOpenLevel)) return false;
-    if (!object.Equals(MatTrandPeriod, other.MatTrandPeriod)) return false;
+    if (!object.Equals(MACDOpenLevel, other.MACDOpenLevel)) return false;
+    if (!object.Equals(MATTrendPeriod, other.MATTrendPeriod)) return false;
     if (!object.Equals(MaximumRisk, other.MaximumRisk)) return false;
     if (!object.Equals(DecreaseFactor, other.DecreaseFactor)) return false;
     if (!object.Equals(MovingPeriod, other.MovingPeriod)) return false;
@@ -225,8 +225,8 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     if (lots_ != null) hash ^= Lots.GetHashCode();
     if (takeProfit_ != null) hash ^= TakeProfit.GetHashCode();
     if (trailingStop_ != null) hash ^= TrailingStop.GetHashCode();
-    if (macdOpenLevel_ != null) hash ^= MacdOpenLevel.GetHashCode();
-    if (matTrandPeriod_ != null) hash ^= MatTrandPeriod.GetHashCode();
+    if (mACDOpenLevel_ != null) hash ^= MACDOpenLevel.GetHashCode();
+    if (mATTrendPeriod_ != null) hash ^= MATTrendPeriod.GetHashCode();
     if (maximumRisk_ != null) hash ^= MaximumRisk.GetHashCode();
     if (decreaseFactor_ != null) hash ^= DecreaseFactor.GetHashCode();
     if (movingPeriod_ != null) hash ^= MovingPeriod.GetHashCode();
@@ -256,13 +256,13 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
       output.WriteRawTag(26);
       output.WriteMessage(TrailingStop);
     }
-    if (macdOpenLevel_ != null) {
+    if (mACDOpenLevel_ != null) {
       output.WriteRawTag(34);
-      output.WriteMessage(MacdOpenLevel);
+      output.WriteMessage(MACDOpenLevel);
     }
-    if (matTrandPeriod_ != null) {
+    if (mATTrendPeriod_ != null) {
       output.WriteRawTag(42);
-      output.WriteMessage(MatTrandPeriod);
+      output.WriteMessage(MATTrendPeriod);
     }
     if (maximumRisk_ != null) {
       output.WriteRawTag(50);
@@ -297,11 +297,11 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
     if (trailingStop_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(TrailingStop);
     }
-    if (macdOpenLevel_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MacdOpenLevel);
+    if (mACDOpenLevel_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MACDOpenLevel);
     }
-    if (matTrandPeriod_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MatTrandPeriod);
+    if (mATTrendPeriod_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MATTrendPeriod);
     }
     if (maximumRisk_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(MaximumRisk);
@@ -344,17 +344,17 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
       }
       TrailingStop.MergeFrom(other.TrailingStop);
     }
-    if (other.macdOpenLevel_ != null) {
-      if (macdOpenLevel_ == null) {
-        MacdOpenLevel = new global::MACDOpenLevel();
+    if (other.mACDOpenLevel_ != null) {
+      if (mACDOpenLevel_ == null) {
+        MACDOpenLevel = new global::MACDOpenLevel();
       }
-      MacdOpenLevel.MergeFrom(other.MacdOpenLevel);
+      MACDOpenLevel.MergeFrom(other.MACDOpenLevel);
     }
-    if (other.matTrandPeriod_ != null) {
-      if (matTrandPeriod_ == null) {
-        MatTrandPeriod = new global::MATrendPeriod();
+    if (other.mATTrendPeriod_ != null) {
+      if (mATTrendPeriod_ == null) {
+        MATTrendPeriod = new global::MATrendPeriod();
       }
-      MatTrandPeriod.MergeFrom(other.MatTrandPeriod);
+      MATTrendPeriod.MergeFrom(other.MATTrendPeriod);
     }
     if (other.maximumRisk_ != null) {
       if (maximumRisk_ == null) {
@@ -413,17 +413,17 @@ public sealed partial class AlgorithmParameters : pb::IMessage<AlgorithmParamete
           break;
         }
         case 34: {
-          if (macdOpenLevel_ == null) {
-            MacdOpenLevel = new global::MACDOpenLevel();
+          if (mACDOpenLevel_ == null) {
+            MACDOpenLevel = new global::MACDOpenLevel();
           }
-          input.ReadMessage(MacdOpenLevel);
+          input.ReadMessage(MACDOpenLevel);
           break;
         }
         case 42: {
-          if (matTrandPeriod_ == null) {
-            MatTrandPeriod = new global::MATrendPeriod();
+          if (mATTrendPeriod_ == null) {
+            MATTrendPeriod = new global::MATrendPeriod();
           }
-          input.ReadMessage(MatTrandPeriod);
+          input.ReadMessage(MATTrendPeriod);
           break;
         }
         case 50: {

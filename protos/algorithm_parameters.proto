@@ -12,17 +12,17 @@ import "moving_period.proto";
 import "moving_shift.proto";
 
 message AlgorithmParameters{
-    Lots lots = 1;
+    Lots Lots = 1;
     // macd_sample
     // + lots
-    TakeProfit take_profit = 2;
-    TrailingStop trailing_stop = 3;
-    MACDOpenLevel macd_open_level = 4;
-    MATrendPeriod mat_trand_period = 5;
+    TakeProfit TakeProfit = 2;
+    TrailingStop TrailingStop = 3;
+    MACDOpenLevel MACDOpenLevel = 4;
+    MATrendPeriod MATTrendPeriod = 5;
     // moving_average
     // + lots
-    MaximumRisk maximum_risk = 6;
-    DecreaseFactor decrease_factor = 7;
-    MovingPeriod moving_period = 8;
-    MovingShift moving_shift = 9;
+    MaximumRisk MaximumRisk = 6;
+    DecreaseFactor DecreaseFactor = 7;
+    MovingPeriod MovingPeriod = 8;
+    MovingShift MovingShift = 9;
 }
