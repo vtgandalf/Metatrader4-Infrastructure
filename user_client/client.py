@@ -31,7 +31,7 @@ def run():
     x.algorithm.parameters.MovingPeriod.value = int(12)
     x.algorithm.parameters.MovingShift.value = int(6)
 
-    with grpc.insecure_channel("localhost:9998") as channel:
+    with grpc.insecure_channel("192.168.1.11:9998") as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.execute_test(x)
         print(response)

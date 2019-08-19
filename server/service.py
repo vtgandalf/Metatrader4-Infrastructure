@@ -33,7 +33,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
 
 def client_action(testing_data):
     counter = 0
-    with grpc.insecure_channel("localhost:9999") as channel:
+    with grpc.insecure_channel("192.168.1.17:9999") as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.execute_test(testing_data)
         return response
