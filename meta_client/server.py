@@ -27,6 +27,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         self.running = True
         report = base.run_test(testing_data)
         self.running = False
+        print("Test Successful!!!!")
         return report
 
     

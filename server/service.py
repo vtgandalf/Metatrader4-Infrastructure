@@ -36,8 +36,8 @@ def client_action(testing_data):
     with grpc.insecure_channel("localhost:9999") as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.execute_test(testing_data)
-        channel.unsubscribe(close)
         return response
+        channel.unsubscribe(close)
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))

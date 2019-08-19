@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append(os.path.abspath('messages'))
+sys.path.append(os.path.abspath('messages_py'))
 
 import grpc
 import time

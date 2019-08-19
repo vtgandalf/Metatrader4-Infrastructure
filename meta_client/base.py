@@ -128,7 +128,7 @@ def convertsion_report_to_message(report):
         report_message.long_positions_rate.value = report.long_positions_rate
 
     # Return the message
-    print(report_message)
+    # print(report_message)
     return report_message
 
 def convertsion_report_from_message(report_message):
@@ -241,7 +241,6 @@ def convertsion_report_from_message(report_message):
         report.long_positions_rate = report_message.long_positions_rate.value
 
     # Return the report
-    print(report)
     return report
 
 
