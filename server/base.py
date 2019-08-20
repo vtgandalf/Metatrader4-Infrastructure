@@ -18,6 +18,15 @@ import datetime
 from testing_data_pb2 import TestingData
 from optimization_report_pb2 import OptimizationReport
 
+def address_parser(file):
+    with open(file) as json_file:
+        parsed = json.loads(json_file.read())
+        return parsed['meta_client']['address']
+        # for client in parsed['clients']:
+        #     address = client['address']
+        #     list_all_clients.append(address)
+        #     list_available_clients.append(address)
+
 def convertsion_report_to_message(report):
     report_message = OptimizationReport()
     # Assigning each value of the backtest report message

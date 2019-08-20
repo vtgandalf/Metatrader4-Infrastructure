@@ -13,6 +13,8 @@ import service_pb2_grpc as service_grpc
 from testing_data_pb2 import TestingData
 from google.protobuf.empty_pb2 import Empty
 
+import base as base
+
 def run():
     x = TestingData()
     x.symbol.value = 'EURUSD'
@@ -31,7 +33,9 @@ def run():
     x.algorithm.parameters.MovingPeriod.value = int(12)
     x.algorithm.parameters.MovingShift.value = int(6)
 
-    with grpc.insecure_channel("192.168.1.11:9998") as channel:
+    server_address = base.address_parser("./../addresses.json")
+
+    with grpc.insecure_channel(server_address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.execute_test(x)
         print(response)

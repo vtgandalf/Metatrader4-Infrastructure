@@ -12,7 +12,7 @@ import service_pb2_grpc as service_grpc
 
 from testing_data_pb2 import TestingData
 
-# import base as base
+import base as base
 
 class Listener(service_grpc.MetaTrader4ServiceServicer):
     running = False
@@ -32,8 +32,8 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
 
 
 def client_action(testing_data):
-    counter = 0
-    with grpc.insecure_channel("192.168.1.17:9999") as channel:
+    address = base.address_parser("./../addresses.json")
+    with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.execute_test(testing_data)
         return response
