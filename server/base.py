@@ -9,13 +9,6 @@ import threading
 import datetime
 import json
 
-# from google.protobuf.json_format import MessageToJson
-
-# from concurrent import futures
-# from metatrader.mt4 import initizalize
-# from metatrader.backtest import BackTest
-# from metatrader.report import BacktestReport
-
 from testing_data_pb2 import TestingData
 from optimization_report_pb2 import OptimizationReport
 
@@ -23,10 +16,6 @@ def address_parser(file):
     with open(file) as json_file:
         parsed = json.loads(json_file.read())
         return parsed['meta_client']['address']
-        # for client in parsed['clients']:
-        #     address = client['address']
-        #     list_all_clients.append(address)
-        #     list_available_clients.append(address)
 
 def convertsion_report_to_message(report):
     report_message = OptimizationReport()
@@ -253,63 +242,3 @@ def convertsion_report_from_message(report_message):
     # Return the report
     print(report)
     return report
-
-
-# def run_test(testing_data_message):
-#     # point mt4 install folder
-#     initizalize('C:\\Program Files (x86)\\MetaTrader 4 IC Markets')
-
-#     symbol = testing_data_message.symbol.value
-#     # print("Symbol: {}".format(symbol))
-
-#     period = testing_data_message.period.value
-#     # print("Period: {}".format(period))
-
-#     spread = testing_data_message.spread.value
-#     # print("Spread: {}".format(spread))
-
-#     ea_name = testing_data_message.algorithm.name.value
-#     # print("Al Name: {}".format(ea_name))
-
-#     param = ast.literal_eval(MessageToJson(testing_data_message.algorithm.parameters))
-#     # print("Al Param:")
-#     # print(param)
-
-#     from_date = datetime.datetime(\
-#         testing_data_message.time_period.initial_date.year.value,\
-#         testing_data_message.time_period.initial_date.month.value,\
-#         testing_data_message.time_period.initial_date.day.value)
-#     # print("Starting Date:")
-#     # print(from_date)
-
-#     to_date = datetime.datetime(\
-#         testing_data_message.time_period.final_date.year.value,\
-#         testing_data_message.time_period.final_date.month.value,\
-#         testing_data_message.time_period.final_date.day.value)
-#     # print("Starting Date:")
-#     # print(to_date)
-#     # create backtest object
-#     backtest = BackTest(ea_name, param, symbol, period, from_date, to_date)
-    
-#     # run backtest
-#     ret = backtest.run()
-#     return convertsion_report_to_message(ret)
-        
-# x = TestingData()
-# x.symbol.value = 'EURUSD'
-# x.period.value = 'M5'
-# x.spread.value = '5'
-# x.time_period.initial_date.year.value = 2019
-# x.time_period.initial_date.month.value = 8
-# x.time_period.initial_date.day.value = 16
-# x.time_period.final_date.year.value = 2019
-# x.time_period.final_date.month.value = 8
-# x.time_period.final_date.day.value = 17
-# x.algorithm.name.value = 'Moving Average'
-# x.algorithm.parameters.Lots.value = float(0.1)
-# x.algorithm.parameters.MaximumRisk.value = float(0.02)
-# x.algorithm.parameters.DecreaseFactor.value = float(3.0)
-# x.algorithm.parameters.MovingPeriod.value = int(12)
-# x.algorithm.parameters.MovingShift.value = int(6)
-# report = convertsion_report_to_message(run_test(x))
-# print(report)
