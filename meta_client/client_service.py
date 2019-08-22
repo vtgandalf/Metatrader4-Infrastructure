@@ -11,7 +11,7 @@ import service_pb2 as service
 import service_pb2_grpc as service_grpc
 
 from testing_data_pb2 import TestingData
-
+from google.protobuf.empty_pb2 import Empty
 import base as base
 
 class Listener(service_grpc.MetaTrader4ServiceServicer):

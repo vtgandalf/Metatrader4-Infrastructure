@@ -9,7 +9,7 @@ from concurrent import futures
 
 import service_pb2 as service
 import service_pb2_grpc as service_grpc
-from google.protobuf.empty import Empty
+from google.protobuf.empty_pb2 import Empty
 
 from testing_data_pb2 import TestingData
 
