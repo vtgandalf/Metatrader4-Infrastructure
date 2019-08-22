@@ -32,7 +32,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
     def __inti__(self, *args, **kwargs):
         self.lastPrintTime = time.time()
 
-    def init_station_list(stations: list):
+    def init_station_list(stations):
         for address in stations:
             station = Station()
             station.address = address
@@ -42,7 +42,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         print("Stations list initialized:")
         print(station_list)
 
-    def init_user_list(users: list):
+    def init_user_list(users):
         user_list.extend(users)
         print("User list initialized:")
         print(station_list)
