@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append(os.path.abspath('messages'))
+sys.path.append(os.path.abspath('messages_py'))
 
 import grpc
 import time
@@ -47,7 +47,7 @@ def serve():
         while True:
             index = input()
             testing_data = mock_testing_data()
-            if index = '1':
+            if index == '1':
                 client_action_set_testing_data(mock_testing_data(), listener.server_address)
                 print("Testing data sent")
             time.sleep(10)
