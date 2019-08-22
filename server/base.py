@@ -16,7 +16,7 @@ def address_parser_meta(file):
     with open(file) as json_file:
         parsed = json.loads(json_file.read())
         addr_list = list()
-        for address in parsed['meta_clients']
+        for address in parsed['meta_clients']:
             addr_list.append(address['address'])
         return addr_list
 
@@ -24,7 +24,7 @@ def address_parser_user(file):
     with open(file) as json_file:
         parsed = json.loads(json_file.read())
         addr_list = list()
-        for address in parsed['user_clients']
+        for address in parsed['user_clients']:
             addr_list.append(address['address'])
         return addr_list
 
