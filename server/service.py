@@ -85,8 +85,10 @@ def client_action_set_result(report, address):
 
 def serve():
     listener = Listener()
-    listener.init_station_list(base.address_parser_meta('./../addresses.json'))
-    listener.init_user_list(base.address_parser_user('./../addresses.json'))
+    stations = base.address_parser_meta('./../addresses.json')
+    users = base.address_parser_user('./../addresses.json')
+    listener.init_station_list(stations)
+    listener.init_user_list(users)
 
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     service_grpc.add_MetaTrader4ServiceServicer_to_server(listener, server)
