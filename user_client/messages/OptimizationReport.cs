@@ -43,48 +43,50 @@ public static partial class OptimizationReportReflection {
           "cy5wcm90bxocYXZlX2NvbnNlY3V0aXZlX2xvc3Nlcy5wcm90bxoVc2hvcnRf",
           "cG9zaXRpb25zLnByb3RvGhpzaG9ydF9wb3NpdGlvbnNfcmF0ZS5wcm90bxoU",
           "bG9uZ19wb3NpdGlvbnMucHJvdG8aGWxvbmdfcG9zaXRpb25zX3JhdGUucHJv",
-          "dG8inQ0KEk9wdGltaXphdGlvblJlcG9ydBIXCgZwcm9maXQYASABKAsyBy5Q",
-          "cm9maXQSJAoNcHJvZml0X2ZhY3RvchgCIAEoCzINLlByb2ZpdEZhY3RvchIo",
-          "Cg9leHBlY3RlZF9wYXlvZmYYAyABKAsyDy5FeHRlY3RlZFBheW9mZhIiCgxt",
-          "YXhfZHJhd2Rvd24YBCABKAsyDC5NYXhEcmF3RG93bhIrChFtYXhfZHJhd2Rv",
-          "d25fcmF0ZRgFIAEoCzIQLk1heERyYXdEb3duUmF0ZRIsChFyZWxhdGl2ZV9k",
-          "cmF3ZG93bhgGIAEoCzIRLlJlbGF0aXZlRHJhd0Rvd24SNQoWcmVsYXRpdmVf",
-          "ZHJhd2Rvd25fcmF0ZRgHIAEoCzIVLlJlbGF0aXZlRHJhd0Rvd25SYXRlEiIK",
-          "DGFic19kcmF3ZG93bhgIIAEoCzIMLkFic0RyYXdEb3duEisKEWFic19kcmF3",
-          "ZG93bl9yYXRlGAkgASgLMhAuQWJzRHJhd0Rvd25SYXRlEiIKDGdyb3NzX3By",
-          "b2ZpdBgKIAEoCzIMLkdyb3NzUHJvZml0Eh4KCmdyb3NzX2xvc3MYCyABKAsy",
-          "Ci5Hcm9zc0xvc3MSIgoMdG90YWxfdHJhZGVzGAwgASgLMgwuVG90YWxUcmFk",
-          "ZXMSMQoUbGFyZ2VzdF9wcm9maXRfdHJhZGUYDSABKAsyEy5MYXJnZXN0UHJv",
-          "Zml0VHJhZGUSLQoSbGFyZ2VzdF9sb3NzX3RyYWRlGA4gASgLMhEuTGFyZ2Vz",
-          "dExvc3NUcmFkZRIxChRhdmVyYWdlX3Byb2ZpdF90cmFkZRgPIAEoCzITLkF2",
-          "ZXJhZ2VQcm9maXRUcmFkZRItChJhdmVyYWdlX2xvc3NfdHJhZGUYECABKAsy",
-          "ES5BdmVyYWdlTG9zc1RyYWRlEj8KG21vZGVsaW5nX3F1YWxpdHlfcGVyY2Vu",
-          "dGFnZRgRIAEoCzIaLk1vZGVsaW5nUXVhbGl0eVBlcmNlbnRhZ2USQAocbWF4",
-          "X2NvbnNlY3V0aXZlX3Byb2ZpdF9jb3VudBgSIAEoCzIaLk1heENvbnNlY3V0",
-          "aXZlUHJvZml0Q291bnQSNQoWbWF4X2NvbnNlY3V0aXZlX3Byb2ZpdBgTIAEo",
-          "CzIVLk1heENvbnNlY3V0aXZlUHJvZml0EjwKGm1heF9jb25zZWN1dGl2ZV9s",
-          "b3NzX2NvdW50GBQgASgLMhguTWF4Q29uc2VjdXRpdmVMb3NzQ291bnQSMQoU",
-          "bWF4X2NvbnNlY3V0aXZlX2xvc3MYFSABKAsyEy5NYXhDb25zZWN1dGl2ZUxv",
-          "c3MSPAoabWF4X2NvbnNlY3V0aXZlX3dpbnNfY291bnQYFiABKAsyGC5NYXhD",
-          "b25zZWN1dGl2ZVdpbnNDb3VudBI+ChttYXhfY29uc2VjdXRpdmVfd2luc19w",
-          "cm9maXQYFyABKAsyGS5NYXhDb25zZWN1dGl2ZVdpbnNQcm9maXQSQAocbWF4",
-          "X2NvbnNlY3V0aXZlX2xvc3Nlc19jb3VudBgYIAEoCzIaLk1heENvbnNlY3V0",
-          "aXZlTG9zc2VzQ291bnQSPgobbWF4X2NvbnNlY3V0aXZlX2xvc3Nlc19sb3Nz",
-          "GBkgASgLMhkuTWF4Q29uc2VjdXRpdmVMb3NzZXNMb3NzEiQKDXByb2ZpdF90",
-          "cmFkZXMYGiABKAsyDS5Qcm9maXRUcmFkZXMSLQoScHJvZml0X3RyYWRlc19y",
-          "YXRlGBsgASgLMhEuUHJvZml0VHJhZGVzUmF0ZRIgCgtsb3NzX3RyYWRlcxgc",
-          "IAEoCzILLkxvc3NUcmFkZXMSKQoQbG9zc190cmFkZXNfcmF0ZRgdIAEoCzIP",
-          "Lkxvc3NUcmFkZXNSYXRlEjEKFGF2ZV9jb25zZWN1dGl2ZV93aW5zGB4gASgL",
-          "MhMuQXZlQ29uc2VjdXRpdmVXaW5zEjUKFmF2ZV9jb25zZWN1dGl2ZV9sb3Nz",
-          "ZXMYHyABKAsyFS5BdmVDb25zZWN1dGl2ZUxvc3NlcxIoCg9zaG9ydF9wb3Np",
-          "dGlvbnMYICABKAsyDy5TaG9ydFBvc2l0aW9ucxIxChRzaG9ydF9wb3NpdGlv",
-          "bnNfcmF0ZRghIAEoCzITLlNob3J0UG9zaXRpb25zUmF0ZRImCg5sb25nX3Bv",
-          "c2l0aW9ucxgiIAEoCzIOLkxvbmdQb3NpdGlvbnMSLwoTbG9uZ19wb3NpdGlv",
-          "bnNfcmF0ZRgjIAEoCzISLkxvbmdQb3NpdGlvbnNSYXRlYgZwcm90bzM="));
+          "dG8aEHN0YXRpb25faWQucHJvdG8ivQ0KEk9wdGltaXphdGlvblJlcG9ydBIX",
+          "CgZwcm9maXQYASABKAsyBy5Qcm9maXQSJAoNcHJvZml0X2ZhY3RvchgCIAEo",
+          "CzINLlByb2ZpdEZhY3RvchIoCg9leHBlY3RlZF9wYXlvZmYYAyABKAsyDy5F",
+          "eHRlY3RlZFBheW9mZhIiCgxtYXhfZHJhd2Rvd24YBCABKAsyDC5NYXhEcmF3",
+          "RG93bhIrChFtYXhfZHJhd2Rvd25fcmF0ZRgFIAEoCzIQLk1heERyYXdEb3du",
+          "UmF0ZRIsChFyZWxhdGl2ZV9kcmF3ZG93bhgGIAEoCzIRLlJlbGF0aXZlRHJh",
+          "d0Rvd24SNQoWcmVsYXRpdmVfZHJhd2Rvd25fcmF0ZRgHIAEoCzIVLlJlbGF0",
+          "aXZlRHJhd0Rvd25SYXRlEiIKDGFic19kcmF3ZG93bhgIIAEoCzIMLkFic0Ry",
+          "YXdEb3duEisKEWFic19kcmF3ZG93bl9yYXRlGAkgASgLMhAuQWJzRHJhd0Rv",
+          "d25SYXRlEiIKDGdyb3NzX3Byb2ZpdBgKIAEoCzIMLkdyb3NzUHJvZml0Eh4K",
+          "Cmdyb3NzX2xvc3MYCyABKAsyCi5Hcm9zc0xvc3MSIgoMdG90YWxfdHJhZGVz",
+          "GAwgASgLMgwuVG90YWxUcmFkZXMSMQoUbGFyZ2VzdF9wcm9maXRfdHJhZGUY",
+          "DSABKAsyEy5MYXJnZXN0UHJvZml0VHJhZGUSLQoSbGFyZ2VzdF9sb3NzX3Ry",
+          "YWRlGA4gASgLMhEuTGFyZ2VzdExvc3NUcmFkZRIxChRhdmVyYWdlX3Byb2Zp",
+          "dF90cmFkZRgPIAEoCzITLkF2ZXJhZ2VQcm9maXRUcmFkZRItChJhdmVyYWdl",
+          "X2xvc3NfdHJhZGUYECABKAsyES5BdmVyYWdlTG9zc1RyYWRlEj8KG21vZGVs",
+          "aW5nX3F1YWxpdHlfcGVyY2VudGFnZRgRIAEoCzIaLk1vZGVsaW5nUXVhbGl0",
+          "eVBlcmNlbnRhZ2USQAocbWF4X2NvbnNlY3V0aXZlX3Byb2ZpdF9jb3VudBgS",
+          "IAEoCzIaLk1heENvbnNlY3V0aXZlUHJvZml0Q291bnQSNQoWbWF4X2NvbnNl",
+          "Y3V0aXZlX3Byb2ZpdBgTIAEoCzIVLk1heENvbnNlY3V0aXZlUHJvZml0EjwK",
+          "Gm1heF9jb25zZWN1dGl2ZV9sb3NzX2NvdW50GBQgASgLMhguTWF4Q29uc2Vj",
+          "dXRpdmVMb3NzQ291bnQSMQoUbWF4X2NvbnNlY3V0aXZlX2xvc3MYFSABKAsy",
+          "Ey5NYXhDb25zZWN1dGl2ZUxvc3MSPAoabWF4X2NvbnNlY3V0aXZlX3dpbnNf",
+          "Y291bnQYFiABKAsyGC5NYXhDb25zZWN1dGl2ZVdpbnNDb3VudBI+ChttYXhf",
+          "Y29uc2VjdXRpdmVfd2luc19wcm9maXQYFyABKAsyGS5NYXhDb25zZWN1dGl2",
+          "ZVdpbnNQcm9maXQSQAocbWF4X2NvbnNlY3V0aXZlX2xvc3Nlc19jb3VudBgY",
+          "IAEoCzIaLk1heENvbnNlY3V0aXZlTG9zc2VzQ291bnQSPgobbWF4X2NvbnNl",
+          "Y3V0aXZlX2xvc3Nlc19sb3NzGBkgASgLMhkuTWF4Q29uc2VjdXRpdmVMb3Nz",
+          "ZXNMb3NzEiQKDXByb2ZpdF90cmFkZXMYGiABKAsyDS5Qcm9maXRUcmFkZXMS",
+          "LQoScHJvZml0X3RyYWRlc19yYXRlGBsgASgLMhEuUHJvZml0VHJhZGVzUmF0",
+          "ZRIgCgtsb3NzX3RyYWRlcxgcIAEoCzILLkxvc3NUcmFkZXMSKQoQbG9zc190",
+          "cmFkZXNfcmF0ZRgdIAEoCzIPLkxvc3NUcmFkZXNSYXRlEjEKFGF2ZV9jb25z",
+          "ZWN1dGl2ZV93aW5zGB4gASgLMhMuQXZlQ29uc2VjdXRpdmVXaW5zEjUKFmF2",
+          "ZV9jb25zZWN1dGl2ZV9sb3NzZXMYHyABKAsyFS5BdmVDb25zZWN1dGl2ZUxv",
+          "c3NlcxIoCg9zaG9ydF9wb3NpdGlvbnMYICABKAsyDy5TaG9ydFBvc2l0aW9u",
+          "cxIxChRzaG9ydF9wb3NpdGlvbnNfcmF0ZRghIAEoCzITLlNob3J0UG9zaXRp",
+          "b25zUmF0ZRImCg5sb25nX3Bvc2l0aW9ucxgiIAEoCzIOLkxvbmdQb3NpdGlv",
+          "bnMSLwoTbG9uZ19wb3NpdGlvbnNfcmF0ZRgjIAEoCzISLkxvbmdQb3NpdGlv",
+          "bnNSYXRlEh4KCnN0YXRpb25faWQYJCABKAsyCi5TdGF0aW9uSWRiBnByb3Rv",
+          "Mw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ProfitReflection.Descriptor, global::ProfitFactorReflection.Descriptor, global::ExpectedPayoffReflection.Descriptor, global::MaxDrawdownReflection.Descriptor, global::MaxDrawdownRateReflection.Descriptor, global::RelativeDrawdownReflection.Descriptor, global::RelativeDrawdownRateReflection.Descriptor, global::AbsDrawdownReflection.Descriptor, global::AbsDrawdownRateReflection.Descriptor, global::GrossProfitReflection.Descriptor, global::GrossLossReflection.Descriptor, global::TotalTradesReflection.Descriptor, global::LargestProfitTradeReflection.Descriptor, global::LargestLossTradeReflection.Descriptor, global::AverageProfitTradeReflection.Descriptor, global::AverageLossTradeReflection.Descriptor, global::ModelingQualityPercentageReflection.Descriptor, global::MaxConsecutiveProfitCountReflection.Descriptor, global::MaxConsecutiveProfitReflection.Descriptor, global::MaxConsecutiveLossCountReflection.Descriptor, global::MaxConsecutiveLossReflection.Descriptor, global::MaxConsecutiveWinsCountReflection.Descriptor, global::MaxConsecutiveWinsProfitReflection.Descriptor, global::MaxConsecutiveLossesCountReflection.Descriptor, global::MaxConsecutiveLossesLossReflection.Descriptor, global::ProfitTradesReflection.Descriptor, global::ProfitTradesRateReflection.Descriptor, global::LossTradesReflection.Descriptor, global::LossTradesRateReflection.Descriptor, global::AveConsecutiveWinsReflection.Descriptor, global::AveConsecutiveLossesReflection.Descriptor, global::ShortPositionsReflection.Descriptor, global::ShortPositionsRateReflection.Descriptor, global::LongPositionsReflection.Descriptor, global::LongPositionsRateReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::ProfitReflection.Descriptor, global::ProfitFactorReflection.Descriptor, global::ExpectedPayoffReflection.Descriptor, global::MaxDrawdownReflection.Descriptor, global::MaxDrawdownRateReflection.Descriptor, global::RelativeDrawdownReflection.Descriptor, global::RelativeDrawdownRateReflection.Descriptor, global::AbsDrawdownReflection.Descriptor, global::AbsDrawdownRateReflection.Descriptor, global::GrossProfitReflection.Descriptor, global::GrossLossReflection.Descriptor, global::TotalTradesReflection.Descriptor, global::LargestProfitTradeReflection.Descriptor, global::LargestLossTradeReflection.Descriptor, global::AverageProfitTradeReflection.Descriptor, global::AverageLossTradeReflection.Descriptor, global::ModelingQualityPercentageReflection.Descriptor, global::MaxConsecutiveProfitCountReflection.Descriptor, global::MaxConsecutiveProfitReflection.Descriptor, global::MaxConsecutiveLossCountReflection.Descriptor, global::MaxConsecutiveLossReflection.Descriptor, global::MaxConsecutiveWinsCountReflection.Descriptor, global::MaxConsecutiveWinsProfitReflection.Descriptor, global::MaxConsecutiveLossesCountReflection.Descriptor, global::MaxConsecutiveLossesLossReflection.Descriptor, global::ProfitTradesReflection.Descriptor, global::ProfitTradesRateReflection.Descriptor, global::LossTradesReflection.Descriptor, global::LossTradesRateReflection.Descriptor, global::AveConsecutiveWinsReflection.Descriptor, global::AveConsecutiveLossesReflection.Descriptor, global::ShortPositionsReflection.Descriptor, global::ShortPositionsRateReflection.Descriptor, global::LongPositionsReflection.Descriptor, global::LongPositionsRateReflection.Descriptor, global::StationIdReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::OptimizationReport), global::OptimizationReport.Parser, new[]{ "Profit", "ProfitFactor", "ExpectedPayoff", "MaxDrawdown", "MaxDrawdownRate", "RelativeDrawdown", "RelativeDrawdownRate", "AbsDrawdown", "AbsDrawdownRate", "GrossProfit", "GrossLoss", "TotalTrades", "LargestProfitTrade", "LargestLossTrade", "AverageProfitTrade", "AverageLossTrade", "ModelingQualityPercentage", "MaxConsecutiveProfitCount", "MaxConsecutiveProfit", "MaxConsecutiveLossCount", "MaxConsecutiveLoss", "MaxConsecutiveWinsCount", "MaxConsecutiveWinsProfit", "MaxConsecutiveLossesCount", "MaxConsecutiveLossesLoss", "ProfitTrades", "ProfitTradesRate", "LossTrades", "LossTradesRate", "AveConsecutiveWins", "AveConsecutiveLosses", "ShortPositions", "ShortPositionsRate", "LongPositions", "LongPositionsRate" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::OptimizationReport), global::OptimizationReport.Parser, new[]{ "Profit", "ProfitFactor", "ExpectedPayoff", "MaxDrawdown", "MaxDrawdownRate", "RelativeDrawdown", "RelativeDrawdownRate", "AbsDrawdown", "AbsDrawdownRate", "GrossProfit", "GrossLoss", "TotalTrades", "LargestProfitTrade", "LargestLossTrade", "AverageProfitTrade", "AverageLossTrade", "ModelingQualityPercentage", "MaxConsecutiveProfitCount", "MaxConsecutiveProfit", "MaxConsecutiveLossCount", "MaxConsecutiveLoss", "MaxConsecutiveWinsCount", "MaxConsecutiveWinsProfit", "MaxConsecutiveLossesCount", "MaxConsecutiveLossesLoss", "ProfitTrades", "ProfitTradesRate", "LossTrades", "LossTradesRate", "AveConsecutiveWins", "AveConsecutiveLosses", "ShortPositions", "ShortPositionsRate", "LongPositions", "LongPositionsRate", "StationId" }, null, null, null, null)
         }));
   }
   #endregion
@@ -151,6 +153,7 @@ public sealed partial class OptimizationReport : pb::IMessage<OptimizationReport
     shortPositionsRate_ = other.shortPositionsRate_ != null ? other.shortPositionsRate_.Clone() : null;
     longPositions_ = other.longPositions_ != null ? other.longPositions_.Clone() : null;
     longPositionsRate_ = other.longPositionsRate_ != null ? other.longPositionsRate_.Clone() : null;
+    stationId_ = other.stationId_ != null ? other.stationId_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -544,6 +547,17 @@ public sealed partial class OptimizationReport : pb::IMessage<OptimizationReport
     }
   }
 
+  /// <summary>Field number for the "station_id" field.</summary>
+  public const int StationIdFieldNumber = 36;
+  private global::StationId stationId_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::StationId StationId {
+    get { return stationId_; }
+    set {
+      stationId_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as OptimizationReport);
@@ -592,6 +606,7 @@ public sealed partial class OptimizationReport : pb::IMessage<OptimizationReport
     if (!object.Equals(ShortPositionsRate, other.ShortPositionsRate)) return false;
     if (!object.Equals(LongPositions, other.LongPositions)) return false;
     if (!object.Equals(LongPositionsRate, other.LongPositionsRate)) return false;
+    if (!object.Equals(StationId, other.StationId)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -633,6 +648,7 @@ public sealed partial class OptimizationReport : pb::IMessage<OptimizationReport
     if (shortPositionsRate_ != null) hash ^= ShortPositionsRate.GetHashCode();
     if (longPositions_ != null) hash ^= LongPositions.GetHashCode();
     if (longPositionsRate_ != null) hash ^= LongPositionsRate.GetHashCode();
+    if (stationId_ != null) hash ^= StationId.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -786,6 +802,10 @@ public sealed partial class OptimizationReport : pb::IMessage<OptimizationReport
       output.WriteRawTag(154, 2);
       output.WriteMessage(LongPositionsRate);
     }
+    if (stationId_ != null) {
+      output.WriteRawTag(162, 2);
+      output.WriteMessage(StationId);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -898,6 +918,9 @@ public sealed partial class OptimizationReport : pb::IMessage<OptimizationReport
     }
     if (longPositionsRate_ != null) {
       size += 2 + pb::CodedOutputStream.ComputeMessageSize(LongPositionsRate);
+    }
+    if (stationId_ != null) {
+      size += 2 + pb::CodedOutputStream.ComputeMessageSize(StationId);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1119,6 +1142,12 @@ public sealed partial class OptimizationReport : pb::IMessage<OptimizationReport
         LongPositionsRate = new global::LongPositionsRate();
       }
       LongPositionsRate.MergeFrom(other.LongPositionsRate);
+    }
+    if (other.stationId_ != null) {
+      if (stationId_ == null) {
+        StationId = new global::StationId();
+      }
+      StationId.MergeFrom(other.StationId);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -1374,6 +1403,13 @@ public sealed partial class OptimizationReport : pb::IMessage<OptimizationReport
             LongPositionsRate = new global::LongPositionsRate();
           }
           input.ReadMessage(LongPositionsRate);
+          break;
+        }
+        case 290: {
+          if (stationId_ == null) {
+            StationId = new global::StationId();
+          }
+          input.ReadMessage(StationId);
           break;
         }
       }

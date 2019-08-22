@@ -24,14 +24,15 @@ public static partial class TestingDataReflection {
         string.Concat(
           "ChJ0ZXN0aW5nX2RhdGEucHJvdG8aDHN5bWJvbC5wcm90bxoMcGVyaW9kLnBy",
           "b3RvGgxzcHJlYWQucHJvdG8aEXRpbWVfcGVyaW9kLnByb3RvGg9hbGdvcml0",
-          "aG0ucHJvdG8imQEKC1Rlc3RpbmdEYXRhEhcKBnN5bWJvbBgBIAEoCzIHLlN5",
-          "bWJvbBIXCgZwZXJpb2QYAiABKAsyBy5QZXJpb2QSFwoGc3ByZWFkGAMgASgL",
-          "MgcuU3ByZWFkEiAKC3RpbWVfcGVyaW9kGAQgASgLMgsuVGltZVBlcmlvZBId",
-          "CglhbGdvcml0aG0YBSABKAsyCi5BbGdvcml0aG1iBnByb3RvMw=="));
+          "aG0ucHJvdG8aEHN0YXRpb25faWQucHJvdG8iuQEKC1Rlc3RpbmdEYXRhEhcK",
+          "BnN5bWJvbBgBIAEoCzIHLlN5bWJvbBIXCgZwZXJpb2QYAiABKAsyBy5QZXJp",
+          "b2QSFwoGc3ByZWFkGAMgASgLMgcuU3ByZWFkEiAKC3RpbWVfcGVyaW9kGAQg",
+          "ASgLMgsuVGltZVBlcmlvZBIdCglhbGdvcml0aG0YBSABKAsyCi5BbGdvcml0",
+          "aG0SHgoKc3RhdGlvbl9pZBgGIAEoCzIKLlN0YXRpb25JZGIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::SymbolReflection.Descriptor, global::PeriodReflection.Descriptor, global::SpreadReflection.Descriptor, global::TimePeriodReflection.Descriptor, global::AlgorithmReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::SymbolReflection.Descriptor, global::PeriodReflection.Descriptor, global::SpreadReflection.Descriptor, global::TimePeriodReflection.Descriptor, global::AlgorithmReflection.Descriptor, global::StationIdReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TestingData), global::TestingData.Parser, new[]{ "Symbol", "Period", "Spread", "TimePeriod", "Algorithm" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::TestingData), global::TestingData.Parser, new[]{ "Symbol", "Period", "Spread", "TimePeriod", "Algorithm", "StationId" }, null, null, null, null)
         }));
   }
   #endregion
@@ -68,6 +69,7 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     spread_ = other.spread_ != null ? other.spread_.Clone() : null;
     timePeriod_ = other.timePeriod_ != null ? other.timePeriod_.Clone() : null;
     algorithm_ = other.algorithm_ != null ? other.algorithm_.Clone() : null;
+    stationId_ = other.stationId_ != null ? other.stationId_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -131,6 +133,17 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     }
   }
 
+  /// <summary>Field number for the "station_id" field.</summary>
+  public const int StationIdFieldNumber = 6;
+  private global::StationId stationId_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::StationId StationId {
+    get { return stationId_; }
+    set {
+      stationId_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as TestingData);
@@ -149,6 +162,7 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     if (!object.Equals(Spread, other.Spread)) return false;
     if (!object.Equals(TimePeriod, other.TimePeriod)) return false;
     if (!object.Equals(Algorithm, other.Algorithm)) return false;
+    if (!object.Equals(StationId, other.StationId)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -160,6 +174,7 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     if (spread_ != null) hash ^= Spread.GetHashCode();
     if (timePeriod_ != null) hash ^= TimePeriod.GetHashCode();
     if (algorithm_ != null) hash ^= Algorithm.GetHashCode();
+    if (stationId_ != null) hash ^= StationId.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -193,6 +208,10 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
       output.WriteRawTag(42);
       output.WriteMessage(Algorithm);
     }
+    if (stationId_ != null) {
+      output.WriteRawTag(50);
+      output.WriteMessage(StationId);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -215,6 +234,9 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
     }
     if (algorithm_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(Algorithm);
+    }
+    if (stationId_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(StationId);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -256,6 +278,12 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
         Algorithm = new global::Algorithm();
       }
       Algorithm.MergeFrom(other.Algorithm);
+    }
+    if (other.stationId_ != null) {
+      if (stationId_ == null) {
+        StationId = new global::StationId();
+      }
+      StationId.MergeFrom(other.StationId);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -301,6 +329,13 @@ public sealed partial class TestingData : pb::IMessage<TestingData> {
             Algorithm = new global::Algorithm();
           }
           input.ReadMessage(Algorithm);
+          break;
+        }
+        case 50: {
+          if (stationId_ == null) {
+            StationId = new global::StationId();
+          }
+          input.ReadMessage(StationId);
           break;
         }
       }

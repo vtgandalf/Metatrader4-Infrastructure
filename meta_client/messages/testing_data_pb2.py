@@ -18,6 +18,7 @@ import period_pb2 as period__pb2
 import spread_pb2 as spread__pb2
 import time_period_pb2 as time__period__pb2
 import algorithm_pb2 as algorithm__pb2
+import station_id_pb2 as station__id__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -25,9 +26,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x12testing_data.proto\x1a\x0csymbol.proto\x1a\x0cperiod.proto\x1a\x0cspread.proto\x1a\x11time_period.proto\x1a\x0f\x61lgorithm.proto\"\x99\x01\n\x0bTestingData\x12\x17\n\x06symbol\x18\x01 \x01(\x0b\x32\x07.Symbol\x12\x17\n\x06period\x18\x02 \x01(\x0b\x32\x07.Period\x12\x17\n\x06spread\x18\x03 \x01(\x0b\x32\x07.Spread\x12 \n\x0btime_period\x18\x04 \x01(\x0b\x32\x0b.TimePeriod\x12\x1d\n\talgorithm\x18\x05 \x01(\x0b\x32\n.Algorithmb\x06proto3')
+  serialized_pb=_b('\n\x12testing_data.proto\x1a\x0csymbol.proto\x1a\x0cperiod.proto\x1a\x0cspread.proto\x1a\x11time_period.proto\x1a\x0f\x61lgorithm.proto\x1a\x10station_id.proto\"\xb9\x01\n\x0bTestingData\x12\x17\n\x06symbol\x18\x01 \x01(\x0b\x32\x07.Symbol\x12\x17\n\x06period\x18\x02 \x01(\x0b\x32\x07.Period\x12\x17\n\x06spread\x18\x03 \x01(\x0b\x32\x07.Spread\x12 \n\x0btime_period\x18\x04 \x01(\x0b\x32\x0b.TimePeriod\x12\x1d\n\talgorithm\x18\x05 \x01(\x0b\x32\n.Algorithm\x12\x1e\n\nstation_id\x18\x06 \x01(\x0b\x32\n.StationIdb\x06proto3')
   ,
-  dependencies=[symbol__pb2.DESCRIPTOR,period__pb2.DESCRIPTOR,spread__pb2.DESCRIPTOR,time__period__pb2.DESCRIPTOR,algorithm__pb2.DESCRIPTOR,])
+  dependencies=[symbol__pb2.DESCRIPTOR,period__pb2.DESCRIPTOR,spread__pb2.DESCRIPTOR,time__period__pb2.DESCRIPTOR,algorithm__pb2.DESCRIPTOR,station__id__pb2.DESCRIPTOR,])
 
 
 
@@ -74,6 +75,13 @@ _TESTINGDATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='station_id', full_name='TestingData.station_id', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -86,8 +94,8 @@ _TESTINGDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=101,
-  serialized_end=254,
+  serialized_start=119,
+  serialized_end=304,
 )
 
 _TESTINGDATA.fields_by_name['symbol'].message_type = symbol__pb2._SYMBOL
@@ -95,6 +103,7 @@ _TESTINGDATA.fields_by_name['period'].message_type = period__pb2._PERIOD
 _TESTINGDATA.fields_by_name['spread'].message_type = spread__pb2._SPREAD
 _TESTINGDATA.fields_by_name['time_period'].message_type = time__period__pb2._TIMEPERIOD
 _TESTINGDATA.fields_by_name['algorithm'].message_type = algorithm__pb2._ALGORITHM
+_TESTINGDATA.fields_by_name['station_id'].message_type = station__id__pb2._STATIONID
 DESCRIPTOR.message_types_by_name['TestingData'] = _TESTINGDATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

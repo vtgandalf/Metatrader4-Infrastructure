@@ -24,15 +24,16 @@ public static partial class ServiceReflection {
         string.Concat(
           "Cg1zZXJ2aWNlLnByb3RvGhtnb29nbGUvcHJvdG9idWYvZW1wdHkucHJvdG8a",
           "CmRhdGEucHJvdG8aEnRlc3RpbmdfZGF0YS5wcm90bxoZb3B0aW1pemF0aW9u",
-          "X3JlcG9ydC5wcm90bzLXAgoSTWV0YVRyYWRlcjRTZXJ2aWNlEjoKEGdldF90",
+          "X3JlcG9ydC5wcm90bzKVAwoSTWV0YVRyYWRlcjRTZXJ2aWNlEjoKEGdldF90",
           "ZXN0aW5nX2RhdGESFi5nb29nbGUucHJvdG9idWYuRW1wdHkaDC5UZXN0aW5n",
           "RGF0YSIAEjoKEHNldF90ZXN0aW5nX2RhdGESDC5UZXN0aW5nRGF0YRoWLmdv",
           "b2dsZS5wcm90b2J1Zi5FbXB0eSIAEjMKDGV4ZWN1dGVfdGVzdBIMLlRlc3Rp",
-          "bmdEYXRhGhMuT3B0aW1pemF0aW9uUmVwb3J0IgASOgoJZ2V0X2VzdWx0EhYu",
-          "Z29vZ2xlLnByb3RvYnVmLkVtcHR5GhMuT3B0aW1pemF0aW9uUmVwb3J0IgAS",
-          "KwoIZ2V0X2RhdGESBS5EYXRhGhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IgAS",
-          "KwoIc2V0X2RhdGESFi5nb29nbGUucHJvdG9idWYuRW1wdHkaBS5EYXRhIgBi",
-          "BnByb3RvMw=="));
+          "bmdEYXRhGhMuT3B0aW1pemF0aW9uUmVwb3J0IgASOwoKZ2V0X3Jlc3VsdBIW",
+          "Lmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoTLk9wdGltaXphdGlvblJlcG9ydCIA",
+          "EjsKCnNldF9yZXN1bHQSEy5PcHRpbWl6YXRpb25SZXBvcnQaFi5nb29nbGUu",
+          "cHJvdG9idWYuRW1wdHkiABIrCghnZXRfZGF0YRIFLkRhdGEaFi5nb29nbGUu",
+          "cHJvdG9idWYuRW1wdHkiABIrCghzZXRfZGF0YRIWLmdvb2dsZS5wcm90b2J1",
+          "Zi5FbXB0eRoFLkRhdGEiAGIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::DataReflection.Descriptor, global::TestingDataReflection.Descriptor, global::OptimizationReportReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, null));

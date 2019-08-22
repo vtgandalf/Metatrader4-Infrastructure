@@ -32,10 +32,15 @@ class MetaTrader4ServiceStub(object):
         request_serializer=testing__data__pb2.TestingData.SerializeToString,
         response_deserializer=optimization__report__pb2.OptimizationReport.FromString,
         )
-    self.get_esult = channel.unary_unary(
-        '/MetaTrader4Service/get_esult',
+    self.get_result = channel.unary_unary(
+        '/MetaTrader4Service/get_result',
         request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
         response_deserializer=optimization__report__pb2.OptimizationReport.FromString,
+        )
+    self.set_result = channel.unary_unary(
+        '/MetaTrader4Service/set_result',
+        request_serializer=optimization__report__pb2.OptimizationReport.SerializeToString,
+        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
         )
     self.get_data = channel.unary_unary(
         '/MetaTrader4Service/get_data',
@@ -74,7 +79,14 @@ class MetaTrader4ServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def get_esult(self, request, context):
+  def get_result(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def set_result(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -113,10 +125,15 @@ def add_MetaTrader4ServiceServicer_to_server(servicer, server):
           request_deserializer=testing__data__pb2.TestingData.FromString,
           response_serializer=optimization__report__pb2.OptimizationReport.SerializeToString,
       ),
-      'get_esult': grpc.unary_unary_rpc_method_handler(
-          servicer.get_esult,
+      'get_result': grpc.unary_unary_rpc_method_handler(
+          servicer.get_result,
           request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
           response_serializer=optimization__report__pb2.OptimizationReport.SerializeToString,
+      ),
+      'set_result': grpc.unary_unary_rpc_method_handler(
+          servicer.set_result,
+          request_deserializer=optimization__report__pb2.OptimizationReport.FromString,
+          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
       ),
       'get_data': grpc.unary_unary_rpc_method_handler(
           servicer.get_data,
