@@ -12,10 +12,21 @@ import json
 from testing_data_pb2 import TestingData
 from optimization_report_pb2 import OptimizationReport
 
-def address_parser(file):
+def address_parser_meta(file):
     with open(file) as json_file:
         parsed = json.loads(json_file.read())
-        return parsed['meta_client']['address']
+        addr_list = list()
+        for address in parsed['meta_clients']
+            addr_list.append(address['address'])
+        return addr_list
+
+def address_parser_user(file):
+    with open(file) as json_file:
+        parsed = json.loads(json_file.read())
+        addr_list = list()
+        for address in parsed['user_clients']
+            addr_list.append(address['address'])
+        return addr_list
 
 def convertsion_report_to_message(report):
     report_message = OptimizationReport()

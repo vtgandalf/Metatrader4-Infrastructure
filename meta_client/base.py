@@ -7,6 +7,7 @@ import grpc
 import time
 import threading
 import datetime
+import json
 
 from google.protobuf.json_format import MessageToJson
 
@@ -17,6 +18,11 @@ from metatrader.report import BacktestReport
 
 from testing_data_pb2 import TestingData
 from optimization_report_pb2 import OptimizationReport
+
+def address_parser_server(file):
+    with open(file) as json_file:
+        parsed = json.loads(json_file.read())
+        return parsed['server']['address']
 
 def convertsion_report_to_message(report):
     report_message = OptimizationReport()

@@ -4,6 +4,7 @@ import "period.proto";
 import "spread.proto";
 import "time_period.proto";
 import "algorithm.proto";
+import "station_id.proto";
 
 message TestingData{
     Symbol symbol = 1;
@@ -11,4 +12,5 @@ message TestingData{
     Spread spread = 3;
     TimePeriod time_period = 4;
     Algorithm algorithm = 5;
+    StationId station_id = 6;
 }
