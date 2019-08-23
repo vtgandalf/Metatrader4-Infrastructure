@@ -38,7 +38,7 @@ def client_action_set_result(report, address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.set_result(report)
-        # channel.unsubscribe(close)
+        channel.unsubscribe(close)
         return
 
 def close(channel):
@@ -68,7 +68,7 @@ def serve():
                 listener.running = False
                 listener.testing_data = None
 
-            time.sleep(10)
+            time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
         server.stop(0)

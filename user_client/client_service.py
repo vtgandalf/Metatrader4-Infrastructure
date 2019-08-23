@@ -22,7 +22,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         self.lastPrintTime = time.time()
 
     def set_result(self, report, context):
-        print("Result from {}:".format(str(report.station_id.value)))
+        print("Result from station({}):".format(str(report.station_id.value)))
         print(report)
         return Empty()
 
@@ -32,7 +32,7 @@ def client_action_set_testing_data(testing_data, address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.set_testing_data(testing_data)
-        # channel.unsubscribe(close)
+        channel.unsubscribe(close)
 
 def close(channel):
     channel.close
