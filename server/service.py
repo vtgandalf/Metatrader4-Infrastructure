@@ -56,7 +56,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
             if not station.working:
                 testing_data.station_id.value = i
                 client_action_set_testing_data(testing_data, station.address)
-                sration.working = True
+                station.working = True
                 print("Station working on it:")
                 print(station)
                 break
