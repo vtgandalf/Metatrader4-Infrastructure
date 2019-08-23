@@ -70,6 +70,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         print("Result received!")
         for user in self.user_list:
             self.station_list[report.station_id.value].working = False
+            print(user)
             client_action_set_result(report, user)
         return Empty()
 
