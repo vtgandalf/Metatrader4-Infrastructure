@@ -37,6 +37,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
             station = Station()
             station.address = address
             station.working = False
+            print(station)
             self.station_list.append(station)
 
         print("Stations list initialized:")
