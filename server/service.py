@@ -52,7 +52,6 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
     def set_testing_data(self, testing_data, context):
         i = 0
         for station in self.station_list:
-            i = i + 1
             if not station.working:
                 testing_data.station_id.value = i
                 client_action_set_testing_data(testing_data, station.address)
@@ -60,6 +59,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
                 print("Station working on it:")
                 print(station)
                 break
+            i = i + 1
         else:
             self.job_queue.append(testing_data)
             print("job added to job queue")
@@ -68,8 +68,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
 
     def set_result(self, report, context):
         for user in self.user_list:
-            print(report.station_id.value)
-            self.station_list[0].working = False
+            self.station_list[report.station_id.value].working = False
             client_action_set_result(report, user)
         return Empty()
 
@@ -110,11 +109,11 @@ def serve():
                 for job in listener.job_queue:
                     i = 0
                     for station in listener.station_list:
-                        i = i + 1
                         if not station.working:
                             job.station_id.value = i
                             client_action_set_testing_data(job, station.address)
                             job_queue.remove(job)
+                        i = i + 1
             time.sleep(10)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
