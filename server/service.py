@@ -61,7 +61,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
                 print(station)
                 break
         else:
-            self.job_queue.queue.append(testing_data)
+            self.job_queue.append(testing_data)
             print("job added to job queue")
 
         return Empty()

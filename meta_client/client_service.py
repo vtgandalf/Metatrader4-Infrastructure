@@ -31,6 +31,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         print("Testing data received")
         self.testing_data = testing_data
         self.station_id = testing_data.station_id.value
+        self.running = True
         return Empty()
 
 def client_action_set_result(report, address):
@@ -60,6 +61,7 @@ def serve():
                 running_status = listener.running
 
             if listener.running and listener.testing_data:
+                print("Starting Test!")
                 report = base.run_test(listener.testing_data)
                 report.station_id.value = listener.station_id
                 client_action_set_result(report, listener.server_address)
