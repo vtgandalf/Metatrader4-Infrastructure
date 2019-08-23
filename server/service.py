@@ -116,10 +116,10 @@ def serve():
                         i = i + 1
             if listener.report_list:
                 for report in listener.report_list:
-                    for user in self.user_list:
+                    for user in listener.user_list:
                         self.station_list[report.station_id.value].working = False
-                        print(user)
                         client_action_set_result(report, user)
+                        listener.report_list.remove(report)
             time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
