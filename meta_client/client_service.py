@@ -28,9 +28,9 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         return self.data
 
     def set_testing_data(self, testing_data, context):
+        print("Testing data received")
         self.testing_data = testing_data
         self.station_id = testing_data.station_id.value
-        print("Testing data received")
         return Empty()
 
 def client_action_set_result(report, address):
