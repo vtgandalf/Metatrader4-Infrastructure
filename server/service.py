@@ -33,12 +33,11 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         self.lastPrintTime = time.time()
 
     def fill_station_list(self, stations = []):
-        self.station_list.extend(stations)
-        # for address in stations:
-        #     station = Station()
-        #     station.address = address
-        #     station.working = False
-        #     self.station_list.append(station)
+        for address in stations:
+            station = Station()
+            station.address = address
+            station.working = False
+            self.station_list.append(station)
 
         print("Stations list initialized:")
         print(self.station_list)
@@ -49,14 +48,13 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         print(self.user_list)
 
     def set_testing_data(self, testing_data, context):
-        print(testing_data)
         for i, station in self.station_list:
             if not station.working:
-                print("Station working on it:")
-                print(station)
                 testing_data.station_id.value = i
                 client_action_set_testing_data(testing_data, station.address)
                 sration.working = True
+                print("Station working on it:")
+                print(station)
                 break
         else:
             job_queue.queue.append(testing_data)
