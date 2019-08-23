@@ -67,6 +67,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         return Empty()
 
     def set_result(self, report, context):
+        print("Result received!")
         for user in self.user_list:
             self.station_list[report.station_id.value].working = False
             client_action_set_result(report, user)
@@ -78,14 +79,14 @@ def client_action_set_testing_data(testing_data, address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.set_testing_data(testing_data)
-        channel.unsubscribe(close)
+        # channel.unsubscribe(close)
         return
 
 def client_action_set_result(report, address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.set_result(report)
-        channel.unsubscribe(close)
+        # channel.unsubscribe(close)
         return
 
 def close(channel):
