@@ -53,7 +53,7 @@ def serve():
             if index == '1':
                 client_action_set_testing_data(mock_testing_data(), listener.server_address)
                 print("Testing data sent")
-            time.sleep(10)
+            time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
         server.stop(0)

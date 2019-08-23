@@ -116,7 +116,7 @@ def serve():
                             client_action_set_testing_data(job, station.address)
                             job_queue.remove(job)
                         i = i + 1
-            time.sleep(10)
+            time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
         server.stop(0)
