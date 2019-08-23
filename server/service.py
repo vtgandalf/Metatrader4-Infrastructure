@@ -32,20 +32,21 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
     def __inti__(self, *args, **kwargs):
         self.lastPrintTime = time.time()
 
-    def init_station_list(stations = []):
-        for address in stations:
-            station = Station()
-            station.address = address
-            station.working = False
-            station_list.append(station)
+    def fill_station_list(self, stations = []):
+        self.station_list.extend(stations)
+        # for address in stations:
+        #     station = Station()
+        #     station.address = address
+        #     station.working = False
+        #     self.station_list.append(station)
 
         print("Stations list initialized:")
-        print(station_list)
+        print(self.station_list)
 
-    def init_user_list(users = []):
-        user_list.extend(users)
+    def fill_user_list(self, users = []):
+        self.user_list.extend(users)
         print("User list initialized:")
-        print(station_list)
+        print(self.user_list)
 
     def set_testing_data(self, testing_data, context):
         for i, station in self.station_list:
@@ -87,8 +88,8 @@ def serve():
     listener = Listener()
     stations = base.address_parser_meta('./../addresses.json')
     users = base.address_parser_user('./../addresses.json')
-    listener.init_station_list(stations)
-    listener.init_user_list(users)
+    listener.fill_station_list(stations)
+    listener.fill_user_list(users)
 
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     service_grpc.add_MetaTrader4ServiceServicer_to_server(listener, server)

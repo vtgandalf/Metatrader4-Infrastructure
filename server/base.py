@@ -17,7 +17,7 @@ def address_parser_meta(file):
         parsed = json.loads(json_file.read())
         addr_list = list()
         for address in parsed['meta_clients']:
-            addr_list.append(address['address'])
+            addr_list.append(address['address'].encode("utf-8"))
         return addr_list
 
 def address_parser_user(file):
@@ -25,7 +25,7 @@ def address_parser_user(file):
         parsed = json.loads(json_file.read())
         addr_list = list()
         for address in parsed['user_clients']:
-            addr_list.append(address['address'])
+            addr_list.append(address['address'].encode("utf-8"))
         return addr_list
 
 def convertsion_report_to_message(report):
