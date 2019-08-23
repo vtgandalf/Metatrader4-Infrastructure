@@ -9,118 +9,49 @@ from concurrent import futures
 
 import service_pb2 as service
 import service_pb2_grpc as service_grpc
-from google.protobuf.empty_pb2 import Empty
 
 from testing_data_pb2 import TestingData
 
 import base as base
 
-
-
-
-class Station():
-    address = str()
-    working = bool()
-    def __init__(self, address, working):
-        self.address = address
-        self.working = working
-
-
-
 class Listener(service_grpc.MetaTrader4ServiceServicer):
-    report_list = list()
-    job_queue = list()
-    station_list = list()
-    user_list = list()
+    running = False
 
     def __inti__(self, *args, **kwargs):
         self.lastPrintTime = time.time()
 
-    def fill_station_list(self, stations = []):
-        for address in stations:
-            station = Station(address, False)
-            self.station_list.append(Station(address, False))
+    def get_testing_data(self, request, context):
+        return self.data
 
-        print("Stations list initialized:")
-        print(self.station_list)
-
-
-    def fill_user_list(self, users = []):
-        self.user_list.extend(users)
-        print("User list initialized:")
-        print(self.user_list)
-
-    def set_testing_data(self, testing_data, context):
-        i = 0
-        for station in self.station_list:
-            if not station.working:
-                testing_data.station_id.value = i
-                client_action_set_testing_data(testing_data, station.address)
-                station.working = True
-                print("Station working on it:")
-                print(station)
-                break
-            i = i + 1
-        else:
-            self.job_queue.append(testing_data)
-            print("job added to job queue")
-
-        return Empty()
-
-    def set_result(self, report, context):
-        print("Result received!")
-        self.report_list.append(report)
-        return Empty()
+    def execute_test(self, testing_data, context):
+        self.running = True
+        report = client_action(testing_data)
+        self.running = False
+        return report
 
 
 
-def client_action_set_testing_data(testing_data, address):
+def client_action(testing_data):
+    address = base.address_parser("./../addresses.json")
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        response = stub.set_testing_data(testing_data)
+        response = stub.execute_test(testing_data)
+        return response
         channel.unsubscribe(close)
-        return
-
-def client_action_set_result(report, address):
-    with grpc.insecure_channel(address) as channel:
-        stub = service_grpc.MetaTrader4ServiceStub(channel)
-        response = stub.set_result(report)
-        channel.unsubscribe(close)
-        return
-
-def close(channel):
-    channel.close
 
 def serve():
-    listener = Listener()
-    stations = base.address_parser_meta('./../addresses.json')
-    users = base.address_parser_user('./../addresses.json')
-    listener.fill_station_list(stations)
-    listener.fill_user_list(users)
-
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
+    listener = Listener()
     service_grpc.add_MetaTrader4ServiceServicer_to_server(listener, server)
     server.add_insecure_port("[::]:9998")
     server.start()
-
+    running_status = listener.running
     try:
         while True:
-            if listener.job_queue:
-                for job in listener.job_queue:
-                    i = 0
-                    for station in listener.station_list:
-                        if not station.working:
-                            job.station_id.value = i
-                            client_action_set_testing_data(job, station.address)
-                            job_queue.remove(job)
-                        i = i + 1
-            if listener.report_list:
-                for report in listener.report_list:
-                    for user in listener.user_list:
-                        listener.station_list[report.station_id.value].working = False
-                        client_action_set_result(report, user)
-                        listener.report_list.remove(report)
-            time.sleep(1)
+            if not listener.running == running_status:
+                print("MT4 status changed from " + str(running_status) + " to " + str(listener.running))
+                running_status = listener.running
+            time.sleep(10)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
         server.stop(0)
