@@ -49,6 +49,8 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
 
     def set_testing_data(self, testing_data, context):
         for i, station in self.station_list:
+            print(station.working)
+            print(station.address)
             if not station.working:
                 testing_data.station_id.value = i
                 client_action_set_testing_data(testing_data, station.address)
