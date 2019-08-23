@@ -67,9 +67,9 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         return Empty()
 
     def set_result(self, report, context):
-        for user in user_list:
+        for user in self.user_list:
             self.station_list[report.station_id.value].working = False
-            client_action_set_result(report, user_list)
+            client_action_set_result(report, user)
         return Empty()
 
 
