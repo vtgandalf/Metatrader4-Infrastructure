@@ -28,6 +28,7 @@ class Station():
 
 
 class Listener(service_grpc.MetaTrader4ServiceServicer):
+    report_list = list()
     job_queue = list()
     station_list = list()
     user_list = list()
@@ -68,10 +69,7 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
 
     def set_result(self, report, context):
         print("Result received!")
-        for user in self.user_list:
-            self.station_list[report.station_id.value].working = False
-            print(user)
-            client_action_set_result(report, user)
+        self.report_list.append(report)
         return Empty()
 
 
@@ -116,6 +114,12 @@ def serve():
                             client_action_set_testing_data(job, station.address)
                             job_queue.remove(job)
                         i = i + 1
+            if listener.report_list:
+                for report in listener.report_list:
+                    for user in self.user_list:
+                        self.station_list[report.station_id.value].working = False
+                        print(user)
+                        client_action_set_result(report, user)
             time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
