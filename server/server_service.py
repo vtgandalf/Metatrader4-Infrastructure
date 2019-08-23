@@ -112,7 +112,7 @@ def serve():
                         if not station.working:
                             job.station_id.value = i
                             client_action_set_testing_data(job, station.address)
-                            job_queue.remove(job)
+                            listener.job_queue.remove(job)
                         i = i + 1
             if listener.report_list:
                 for report in listener.report_list:
