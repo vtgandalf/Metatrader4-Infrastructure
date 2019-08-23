@@ -9,6 +9,7 @@ from concurrent import futures
 
 import service_pb2 as service
 import service_pb2_grpc as service_grpc
+from google.protobuf.empty_pb2 import Empty
 
 from testing_data_pb2 import TestingData
 
@@ -20,8 +21,8 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
     def __inti__(self, *args, **kwargs):
         self.lastPrintTime = time.time()
 
-    def get_testing_data(self, request, context):
-        return self.data
+    def set_testing_data(self, request, context):
+        return Empty()
 
     def execute_test(self, testing_data, context):
         self.running = True
