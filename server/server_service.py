@@ -112,6 +112,7 @@ def serve():
                         if not station.working:
                             print("Station working on it:")
                             print(station)
+                            station.working = True
                             job.station_id.value = i
                             client_action_set_testing_data(job, station.address)
                             listener.job_queue.remove(job)
