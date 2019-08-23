@@ -52,11 +52,11 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         print(testing_data)
         for i, station in self.station_list:
             if not station.working:
+                print("Station working on it:")
+                print(station)
                 testing_data.station_id.value = i
                 client_action_set_testing_data(testing_data, station.address)
                 sration.working = True
-                print("Station working on it:")
-                print(station)
                 break
         else:
             job_queue.queue.append(testing_data)
