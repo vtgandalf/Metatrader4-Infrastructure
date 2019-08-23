@@ -34,6 +34,9 @@ def client_action_set_testing_data(testing_data, address):
         response = stub.set_testing_data(testing_data)
         channel.unsubscribe(close)
 
+def close(channel):
+    channel.close
+
 def serve():
     listener = Listener()
     listener.server_address = base.address_parser_server('./../addresses.json')

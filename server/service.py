@@ -87,6 +87,9 @@ def client_action_set_result(report, address):
         channel.unsubscribe(close)
         return
 
+def close(channel):
+    channel.close
+
 def serve():
     listener = Listener()
     stations = base.address_parser_meta('./../addresses.json')

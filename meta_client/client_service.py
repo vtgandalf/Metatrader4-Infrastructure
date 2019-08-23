@@ -39,6 +39,9 @@ def client_action_set_result(report, address):
         response = stub.set_result(report)
         channel.unsubscribe(close)
         return
+
+def close(channel):
+    channel.close
     
 def serve():
     listener = Listener()
