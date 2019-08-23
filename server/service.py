@@ -21,6 +21,9 @@ import base as base
 class Station():
     address = str()
     working = bool()
+    def __init__(self, address, working):
+        self.address = address
+        self.working = working
 
 
 
@@ -34,15 +37,10 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
 
     def fill_station_list(self, stations = []):
         for address in stations:
-            station = Station()
-            station.address = address
-            station.working = False
-            print(station)
-            self.station_list.append(station)
+            self.station_list.append(Station(address, False))
 
         print("Stations list initialized:")
-        for station in self.station_list:
-            print(station)
+        print(self.station_list)
 
     def fill_user_list(self, users = []):
         self.user_list.extend(users)
