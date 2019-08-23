@@ -38,15 +38,10 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
     def fill_station_list(self, stations = []):
         for address in stations:
             station = Station(address, False)
-            print(station)
-            print(station.address)
-            print(station.working)
             self.station_list.append(Station(address, False))
 
         print("Stations list initialized:")
-        print(self.station_list[0])
-        print(self.station_list[0].address)
-        print(self.station_list[0].working)
+        print(self.station_list)
 
 
     def fill_user_list(self, users = []):
@@ -55,7 +50,9 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         print(self.user_list)
 
     def set_testing_data(self, testing_data, context):
-        for i, station in self.station_list:
+        i = 0
+        for station in self.station_list:
+            i = i + 1
             if not station.working:
                 testing_data.station_id.value = i
                 client_action_set_testing_data(testing_data, station.address)
