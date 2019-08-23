@@ -107,7 +107,9 @@ def serve():
         while True:
             if listener.job_queue:
                 for job in listener.job_queue:
-                    for i, station in listener.station_list:
+                    i = 0
+                    for station in listener.station_list:
+                        i = i + 1
                         if not station.working:
                             job.station_id.value = i
                             client_action_set_testing_data(job, station.address)
