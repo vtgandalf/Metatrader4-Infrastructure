@@ -33,7 +33,7 @@ def run():
     x.algorithm.parameters.MovingPeriod.value = int(12)
     x.algorithm.parameters.MovingShift.value = int(6)
 
-    server_address = base.address_parser("./../addresses.json")
+    server_address = base.address_parser_server("./../addresses.json")
 
     with grpc.insecure_channel(server_address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)

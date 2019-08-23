@@ -50,7 +50,7 @@ def serve():
 
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     service_grpc.add_MetaTrader4ServiceServicer_to_server(listener, server)
-    server.add_insecure_port("[::]:9999")
+    server.add_insecure_port("[::]:9998")
     server.start()
 
     running_status = listener.running
