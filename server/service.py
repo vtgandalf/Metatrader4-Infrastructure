@@ -40,7 +40,8 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
             self.station_list.append(station)
 
         print("Stations list initialized:")
-        print(self.station_list)
+        for station in self.station_list:
+            print(station)
 
     def fill_user_list(self, users = []):
         self.user_list.extend(users)
