@@ -15,7 +15,7 @@ from testing_data_pb2 import TestingData
 
 import base as base
 
-
+grpc_timeout = 5
 
 
 class Station():
@@ -82,7 +82,7 @@ def client_action_set_result(report, address):
 def client_check_online(address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        stub.check_online(Empty())
+        stub.check_online(Empty(), grpc_timeout)
         channel.unsubscribe(close)
         return
 
