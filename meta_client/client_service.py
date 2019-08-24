@@ -44,7 +44,7 @@ def client_action_set_result(report, address):
         channel.unsubscribe(close)
         return
 
-def client_check_online(address)
+def client_check_online(address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         stub.check_online()

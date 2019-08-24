@@ -40,7 +40,7 @@ def client_action_set_testing_data(testing_data, address):
         response = stub.set_testing_data(testing_data)
         channel.unsubscribe(close)
 
-def client_check_online(address)
+def client_check_online(address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         stub.check_online()
