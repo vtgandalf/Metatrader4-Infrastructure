@@ -43,7 +43,7 @@ def client_action_set_testing_data(testing_data, address):
 def client_check_online(address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        stub.check_online()
+        stub.check_online(Empty())
         channel.unsubscribe(close)
         return
 
@@ -63,14 +63,17 @@ def serve():
         while True:
             index = int(input())
             listener.report_count = 0
-            while index > 0:
-                try client_check_online():
+            try:
+                client_check_online(listener.server_address)
+            except Exception as err:
+                print(err)
+            else:
+                while index > 0:
                     index = index - 1
                     testing_data = mock_testing_data()
                     client_action_set_testing_data(mock_testing_data(), listener.server_address)
                     print("Testing data sent")
-                except Exception as err:
-                    print(err)
+
             time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")

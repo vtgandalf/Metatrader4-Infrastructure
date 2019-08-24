@@ -94,7 +94,7 @@ def client_action_set_result(report, address):
 def client_check_online(address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        stub.check_online()
+        stub.check_online(Empty())
         channel.unsubscribe(close)
         return
 
@@ -120,26 +120,30 @@ def serve():
                     i = 0
                     for station in listener.station_list:
                         if not station.working:
-                            try client_check_online(station.address):
+                            try:
+                                client_check_online(station.address)
+                            except Exception as err:
+                                print(err)
+                            else:
                                 print("Station working on it:")
                                 print(station)
                                 station.working = True
                                 job.station_id.value = i
                                 client_action_set_testing_data(job, station.address)
                                 listener.job_queue.remove(job)
-                            except Exception as err:
-                                print(err)
                         i = i + 1
             if listener.report_list:
                 for report in listener.report_list:
                     for user in listener.user_list:
-                        try client_check_online(user):
+                        try:
+                            client_check_online(user)
+                        except Exception as err:
+                            print(err)
+                        else:
                             print("Sending report to user")
                             listener.station_list[report.station_id.value].working = False
                             client_action_set_result(report, user)
                             listener.report_list.remove(report)
-                        except Exception as err:
-                            print(err)
             time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")

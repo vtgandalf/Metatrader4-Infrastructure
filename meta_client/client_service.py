@@ -47,7 +47,7 @@ def client_action_set_result(report, address):
 def client_check_online(address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        stub.check_online()
+        stub.check_online(Empty())
         channel.unsubscribe(close)
         return
 
@@ -63,23 +63,27 @@ def serve():
     server.add_insecure_port("[::]:9998")
     server.start()
 
-    running_status = listener.running
     try:
         while True:
-            if not listener.running == running_status:
-                print("MT4 status changed from " + str(running_status) + " to " + str(listener.running))
-                running_status = listener.running
-
             if listener.running and listener.testing_data:
-                try client_check_online(listener.server_address):
-                    print("Starting Test!")
+                report = None
+                print("Starting Test!")
+                try:
                     report = base.run_test(listener.testing_data)
-                    report.station_id.value = listener.station_id
-                    client_action_set_result(report, listener.server_address)
-                    listener.running = False
-                    listener.testing_data = None
                 except Exception as err:
                     print(err)
+                else:
+                    print("Test Finished!")
+                    report.station_id.value = listener.station_id
+                    try:
+                        client_check_online(listener.server_address)
+                    except Exception as err:
+                        print(err)
+                    else:
+                        client_action_set_result(report, listener.server_address)
+                
+                listener.running = False
+                listener.testing_data = None
 
             time.sleep(1)
     except KeyboardInterrupt:
