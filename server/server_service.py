@@ -135,15 +135,15 @@ def serve():
             if listener.report_list:
                 for report in listener.report_list:
                     for user in listener.user_list:
+                        print("Sending report to user")
+                        listener.station_list[report.station_id.value].working = False         
                         try:
                             client_check_online(user)
                         except Exception as err:
                             print(err)
                         else:
-                            print("Sending report to user")
-                            listener.station_list[report.station_id.value].working = False
                             client_action_set_result(report, user)
-                            listener.report_list.remove(report)
+                        listener.report_list.remove(report)
             time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
