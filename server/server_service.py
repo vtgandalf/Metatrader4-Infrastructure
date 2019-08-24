@@ -52,18 +52,20 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
 
     def set_testing_data(self, testing_data, context):
         i = 0
-        for station in self.station_list:
-            if not station.working:
-                testing_data.station_id.value = i
-                client_action_set_testing_data(testing_data, station.address)
-                station.working = True
-                print("Station working on it:")
-                print(station)
-                break
-            i = i + 1
-        else:
-            self.job_queue.append(testing_data)
-            print("job added to job queue")
+        # for station in self.station_list:
+        #     if not station.working:
+        #         testing_data.station_id.value = i
+        #         client_action_set_testing_data(testing_data, station.address)
+        #         station.working = True
+        #         print("Station working on it:")
+        #         print(station)
+        #         break
+        #     i = i + 1
+        # else:
+        #     self.job_queue.append(testing_data)
+        #     print("job added to job queue")
+        self.job_queue.append(testing_data)
+        print("job added to job queue")
 
         return Empty()
 
