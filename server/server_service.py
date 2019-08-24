@@ -147,7 +147,7 @@ def serve():
                         else:
                             client_action_set_result(report, user)
                         listener.report_list.remove(report)
-            time.sleep(1)
+            # time.sleep(0.5)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
         server.stop(0)
