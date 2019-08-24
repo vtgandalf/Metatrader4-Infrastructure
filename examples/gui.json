@@ -1,0 +1,42 @@
+{
+    "algorithms":[
+        {
+            "name": "Moving Average",
+            "parameters":[
+                {"symbol": "EURUSD"},
+                {"period": "M5"},
+                {"spread": "5"},
+                {"starting date year": 2019},
+                {"starting date month": 8},
+                {"starting date day": 16},
+                {"final date year": 2019},
+                {"final date month": 8},
+                {"final date day": 17},
+                {"lots": 0.1},
+                {"maximum risk": 0.02},
+                {"decrease factor": 3.0},
+                {"moving period": 12},
+                {"moving shift": 6}
+            ]
+        },
+        {
+            "name": "MACDSample",
+            "parameters": [
+                {"symbol": "EURUSD"},
+                {"period": "M5"},
+                {"spread": "5"},
+                {"starting date year": 2019},
+                {"starting date month": 8},
+                {"starting date day": 16},
+                {"final date year": 2019},
+                {"final date month": 8},
+                {"final date day": 17},
+                {"lots": 0.1},
+                {"take profit": 1},
+                {"trailing stop": 1},
+                {"macd open level": 1},
+                {"ma trend period": 1}
+            ]
+        }
+    ]
+}
