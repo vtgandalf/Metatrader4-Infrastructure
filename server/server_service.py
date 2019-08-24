@@ -41,36 +41,22 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
             station = Station(address, False)
             self.station_list.append(Station(address, False))
 
-        print("Stations list initialized:")
+        print("INFO: Stations list initialized:")
         print(self.station_list)
 
 
     def fill_user_list(self, users = []):
         self.user_list.extend(users)
-        print("User list initialized:")
+        print("INFO: User list initialized:")
         print(self.user_list)
 
     def set_testing_data(self, testing_data, context):
-        i = 0
-        # for station in self.station_list:
-        #     if not station.working:
-        #         testing_data.station_id.value = i
-        #         client_action_set_testing_data(testing_data, station.address)
-        #         station.working = True
-        #         print("Station working on it:")
-        #         print(station)
-        #         break
-        #     i = i + 1
-        # else:
-        #     self.job_queue.append(testing_data)
-        #     print("job added to job queue")
         self.job_queue.append(testing_data)
-        print("job added to job queue")
-
+        print("INFO: Job received and added to job queue.")
         return Empty()
 
     def set_result(self, report, context):
-        print("Result received!")
+        print("INFO: Result received from MT4 station.")
         self.report_list.append(report)
         return Empty()
 
@@ -125,10 +111,10 @@ def serve():
                             try:
                                 client_check_online(station.address)
                             except Exception as err:
-                                print(err)
+                                # print(err)
+                                print("ERROR: Could not connect to station({})!".format(str(station.address)))
                             else:
-                                print("Station working on it:")
-                                print(station)
+                                print("INFO: Station({}) working on it.".format(str(station.address)))
                                 station.working = True
                                 job.station_id.value = i
                                 client_action_set_testing_data(job, station.address)
@@ -137,19 +123,22 @@ def serve():
                         i = i + 1
             if listener.report_list:
                 for report in listener.report_list:
+                    i = 0
                     for user in listener.user_list:
-                        print("Sending report to user")
+                        print("INFO: Sending report to user({}).".format(str(user)))
                         listener.station_list[report.station_id.value].working = False         
                         try:
                             client_check_online(user)
                         except Exception as err:
-                            print(err)
+                            # print(err)
+                            print("ERROR: Could not connect to user({})!".format(str(user)))
                         else:
                             client_action_set_result(report, user)
                         listener.report_list.remove(report)
+                    i = i + 1
             # time.sleep(0.5)
     except KeyboardInterrupt:
-        print("KeyboardInterrupt")
+        print("INFO: KeyboardInterrupt.")
         server.stop(0)
     
 if __name__ == "__main__":

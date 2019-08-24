@@ -71,17 +71,18 @@ def serve():
                 try:
                     client_check_online(listener.server_address)
                 except Exception as err:
-                    print(err)
+                    # print(err)
+                    print("ERROR: Could not connect to server({})!".format(str(listener.server_address)))
                 else:
                     while index > 0:
                         index = index - 1
                         testing_data = mock_testing_data()
                         client_action_set_testing_data(mock_testing_data(), listener.server_address)
-                        print("Testing data sent")
+                        print("INFO: Testing data sent to server({}).".format(str(listener.server_address)))
 
             time.sleep(1)
     except KeyboardInterrupt:
-        print("KeyboardInterrupt")
+        print("INFO: KeyboardInterrupt.")
         server.stop(0)
 
 def mock_testing_data():
