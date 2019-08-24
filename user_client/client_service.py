@@ -61,18 +61,23 @@ def serve():
 
     try:
         while True:
-            index = int(input())
-            listener.report_count = 0
+            index = None
             try:
-                client_check_online(listener.server_address)
-            except Exception as err:
-                print(err)
+                index = int(input())
+            except Exception:
+                pass
             else:
-                while index > 0:
-                    index = index - 1
-                    testing_data = mock_testing_data()
-                    client_action_set_testing_data(mock_testing_data(), listener.server_address)
-                    print("Testing data sent")
+                listener.report_count = 0
+                try:
+                    client_check_online(listener.server_address)
+                except Exception as err:
+                    print(err)
+                else:
+                    while index > 0:
+                        index = index - 1
+                        testing_data = mock_testing_data()
+                        client_action_set_testing_data(mock_testing_data(), listener.server_address)
+                        print("Testing data sent")
 
             time.sleep(1)
     except KeyboardInterrupt:
