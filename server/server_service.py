@@ -133,6 +133,7 @@ def serve():
                                 job.station_id.value = i
                                 client_action_set_testing_data(job, station.address)
                                 listener.job_queue.remove(job)
+                                break
                         i = i + 1
             if listener.report_list:
                 for report in listener.report_list:
