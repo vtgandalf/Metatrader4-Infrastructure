@@ -85,6 +85,7 @@ def serve():
                         print("ERROR: Could not connect to server({})!".format(str(listener.server_address)))
                     else:
                         client_action_set_result(report, listener.server_address)
+                        print("INFO: Report send to server({})".format(str(listener.server_address)))
                 
                 listener.running = False
                 listener.testing_data = None
