@@ -52,6 +52,11 @@ class MetaTrader4ServiceStub(object):
         request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
         response_deserializer=data__pb2.Data.FromString,
         )
+    self.check_online = channel.unary_unary(
+        '/MetaTrader4Service/check_online',
+        request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+        response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+        )
 
 
 class MetaTrader4ServiceServicer(object):
@@ -107,6 +112,13 @@ class MetaTrader4ServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def check_online(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_MetaTrader4ServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -144,6 +156,11 @@ def add_MetaTrader4ServiceServicer_to_server(servicer, server):
           servicer.set_data,
           request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
           response_serializer=data__pb2.Data.SerializeToString,
+      ),
+      'check_online': grpc.unary_unary_rpc_method_handler(
+          servicer.check_online,
+          request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+          response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

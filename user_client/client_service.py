@@ -17,13 +17,19 @@ import base as base
 
 class Listener(service_grpc.MetaTrader4ServiceServicer):
     server_address = None
+    report_count = 0
 
     def __inti__(self, *args, **kwargs):
         self.lastPrintTime = time.time()
 
     def set_result(self, report, context):
+        self.report_count = self.report_count + 1
         print("Result from station({}):".format(str(report.station_id.value)))
         print(report)
+        print("Report Count({})".format(str(self.report_count)))
+        return Empty()
+
+    def check_online(self, request, context):
         return Empty()
 
 
@@ -33,6 +39,13 @@ def client_action_set_testing_data(testing_data, address):
         stub = service_grpc.MetaTrader4ServiceStub(channel)
         response = stub.set_testing_data(testing_data)
         channel.unsubscribe(close)
+
+def client_check_online(address)
+    with grpc.insecure_channel(address) as channel:
+        stub = service_grpc.MetaTrader4ServiceStub(channel)
+        stub.check_online()
+        channel.unsubscribe(close)
+        return
 
 def close(channel):
     channel.close
@@ -48,11 +61,16 @@ def serve():
 
     try:
         while True:
-            index = input()
-            testing_data = mock_testing_data()
-            if index == '1':
-                client_action_set_testing_data(mock_testing_data(), listener.server_address)
-                print("Testing data sent")
+            index = int(input())
+            listener.report_count = 0
+            while index > 0:
+                try client_check_online():
+                    index = index - 1
+                    testing_data = mock_testing_data()
+                    client_action_set_testing_data(mock_testing_data(), listener.server_address)
+                    print("Testing data sent")
+                except Exception as err:
+                    print(err)
             time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")

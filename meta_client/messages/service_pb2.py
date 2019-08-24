@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\rservice.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\ndata.proto\x1a\x12testing_data.proto\x1a\x19optimization_report.proto2\x95\x03\n\x12MetaTrader4Service\x12:\n\x10get_testing_data\x12\x16.google.protobuf.Empty\x1a\x0c.TestingData\"\x00\x12:\n\x10set_testing_data\x12\x0c.TestingData\x1a\x16.google.protobuf.Empty\"\x00\x12\x33\n\x0c\x65xecute_test\x12\x0c.TestingData\x1a\x13.OptimizationReport\"\x00\x12;\n\nget_result\x12\x16.google.protobuf.Empty\x1a\x13.OptimizationReport\"\x00\x12;\n\nset_result\x12\x13.OptimizationReport\x1a\x16.google.protobuf.Empty\"\x00\x12+\n\x08get_data\x12\x05.Data\x1a\x16.google.protobuf.Empty\"\x00\x12+\n\x08set_data\x12\x16.google.protobuf.Empty\x1a\x05.Data\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\rservice.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\ndata.proto\x1a\x12testing_data.proto\x1a\x19optimization_report.proto2\xd7\x03\n\x12MetaTrader4Service\x12:\n\x10get_testing_data\x12\x16.google.protobuf.Empty\x1a\x0c.TestingData\"\x00\x12:\n\x10set_testing_data\x12\x0c.TestingData\x1a\x16.google.protobuf.Empty\"\x00\x12\x33\n\x0c\x65xecute_test\x12\x0c.TestingData\x1a\x13.OptimizationReport\"\x00\x12;\n\nget_result\x12\x16.google.protobuf.Empty\x1a\x13.OptimizationReport\"\x00\x12;\n\nset_result\x12\x13.OptimizationReport\x1a\x16.google.protobuf.Empty\"\x00\x12+\n\x08get_data\x12\x05.Data\x1a\x16.google.protobuf.Empty\"\x00\x12+\n\x08set_data\x12\x16.google.protobuf.Empty\x1a\x05.Data\"\x00\x12@\n\x0c\x63heck_online\x12\x16.google.protobuf.Empty\x1a\x16.google.protobuf.Empty\"\x00\x62\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,data__pb2.DESCRIPTOR,testing__data__pb2.DESCRIPTOR,optimization__report__pb2.DESCRIPTOR,])
 
@@ -41,7 +41,7 @@ _METATRADER4SERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=106,
-  serialized_end=511,
+  serialized_end=577,
   methods=[
   _descriptor.MethodDescriptor(
     name='get_testing_data',
@@ -104,6 +104,15 @@ _METATRADER4SERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     output_type=data__pb2._DATA,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='check_online',
+    full_name='MetaTrader4Service.check_online',
+    index=7,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
   ),
 ])

@@ -33,11 +33,21 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         self.station_id = testing_data.station_id.value
         self.running = True
         return Empty()
+    
+    def check_online(self, request, context):
+        return Empty()
 
 def client_action_set_result(report, address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        response = stub.set_result(report)
+        stub.set_result(report)
+        channel.unsubscribe(close)
+        return
+
+def client_check_online(address)
+    with grpc.insecure_channel(address) as channel:
+        stub = service_grpc.MetaTrader4ServiceStub(channel)
+        stub.check_online()
         channel.unsubscribe(close)
         return
 
@@ -61,12 +71,15 @@ def serve():
                 running_status = listener.running
 
             if listener.running and listener.testing_data:
-                print("Starting Test!")
-                report = base.run_test(listener.testing_data)
-                report.station_id.value = listener.station_id
-                client_action_set_result(report, listener.server_address)
-                listener.running = False
-                listener.testing_data = None
+                try client_check_online(listener.server_address):
+                    print("Starting Test!")
+                    report = base.run_test(listener.testing_data)
+                    report.station_id.value = listener.station_id
+                    client_action_set_result(report, listener.server_address)
+                    listener.running = False
+                    listener.testing_data = None
+                except Exception as err:
+                    print(err)
 
             time.sleep(1)
     except KeyboardInterrupt:

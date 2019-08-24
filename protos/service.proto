@@ -12,6 +12,7 @@ service MetaTrader4Service{
     rpc set_result(OptimizationReport) returns (google.protobuf.Empty){}
     rpc get_data(Data) returns (google.protobuf.Empty){}
     rpc set_data(google.protobuf.Empty) returns (Data){}
+    rpc check_online(google.protobuf.Empty) returns (google.protobuf.Empty){}
 }
 
 

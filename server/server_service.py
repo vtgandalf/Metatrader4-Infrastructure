@@ -72,19 +72,29 @@ class Listener(service_grpc.MetaTrader4ServiceServicer):
         self.report_list.append(report)
         return Empty()
 
+    def check_online(self, request, context):
+        return Empty()
+
 
 
 def client_action_set_testing_data(testing_data, address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        response = stub.set_testing_data(testing_data)
+        stub.set_testing_data(testing_data)
         channel.unsubscribe(close)
         return
 
 def client_action_set_result(report, address):
     with grpc.insecure_channel(address) as channel:
         stub = service_grpc.MetaTrader4ServiceStub(channel)
-        response = stub.set_result(report)
+        stub.set_result(report)
+        channel.unsubscribe(close)
+        return
+
+def client_check_online(address)
+    with grpc.insecure_channel(address) as channel:
+        stub = service_grpc.MetaTrader4ServiceStub(channel)
+        stub.check_online()
         channel.unsubscribe(close)
         return
 
@@ -110,20 +120,26 @@ def serve():
                     i = 0
                     for station in listener.station_list:
                         if not station.working:
-                            print("Station working on it:")
-                            print(station)
-                            station.working = True
-                            job.station_id.value = i
-                            client_action_set_testing_data(job, station.address)
-                            listener.job_queue.remove(job)
+                            try client_check_online(station.address):
+                                print("Station working on it:")
+                                print(station)
+                                station.working = True
+                                job.station_id.value = i
+                                client_action_set_testing_data(job, station.address)
+                                listener.job_queue.remove(job)
+                            except Exception as err:
+                                print(err)
                         i = i + 1
             if listener.report_list:
                 for report in listener.report_list:
                     for user in listener.user_list:
-                        print("Sending report to user")
-                        listener.station_list[report.station_id.value].working = False
-                        client_action_set_result(report, user)
-                        listener.report_list.remove(report)
+                        try client_check_online(user):
+                            print("Sending report to user")
+                            listener.station_list[report.station_id.value].working = False
+                            client_action_set_result(report, user)
+                            listener.report_list.remove(report)
+                        except Exception as err:
+                            print(err)
             time.sleep(1)
     except KeyboardInterrupt:
         print("KeyboardInterrupt")
