@@ -94,10 +94,10 @@ def mock_testing_data():
     x.spread.value = '5'
     x.time_period.initial_date.year.value = 2019
     x.time_period.initial_date.month.value = 8
-    x.time_period.initial_date.day.value = 16
+    x.time_period.initial_date.day.value = 21
     x.time_period.final_date.year.value = 2019
     x.time_period.final_date.month.value = 8
-    x.time_period.final_date.day.value = 17
+    x.time_period.final_date.day.value = 22
     x.algorithm.name.value = 'Moving Average'
     x.algorithm.parameters.Lots.value = float(0.1)
     x.algorithm.parameters.MaximumRisk.value = float(0.02)
