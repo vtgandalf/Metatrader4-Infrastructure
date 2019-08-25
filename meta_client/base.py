@@ -285,6 +285,12 @@ def run_test(testing_data_message):
     # print(to_date)
     # create backtest object
     backtest = BackTest(ea_name, param, symbol, period, from_date, to_date)
+    print(ea_name)
+    print(param)
+    print(symbol)
+    print(period)
+    print(from_date)
+    print(to_date)
     
     # run backtest
     ret = backtest.run()
